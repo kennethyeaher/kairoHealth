@@ -1,16 +1,17 @@
 """
-Score rule based and LLM predictions against ground truth.
+SScore rule-based and LLM predictions against ground truth.
 
 Computes precision, recall, and F1 at the field level, aggregated to
 per method per noise level for the headline comparison and broken out
 per field for error analysis.
 
 Outputs:
-- results/f1_comparison.csv   : headline table (method x noise x P/R/F1)
-- results/per_field_f1.csv    : per method, per noise, per field F1
-- results/f1_by_noise.png     : bar chart for the paper
-- results/rules_field_heatmap.png : per field F1 heatmap, regex
-- results/llm_field_heatmap.png   : per field F1 heatmap, LLM
+- results/f1_comparison.csv         : headline table (method x noise x P/R/F1)
+- results/per_field_f1.csv          : per method, per noise, per field F1
+- results/f1_by_noise.png           : headline bar chart (F1)
+- results/recall_by_noise.png       : secondary chart (recall) for discussion
+- results/rules_field_heatmap.png   : per-field F1 heatmap, regex
+- results/llm_field_heatmap.png     : per-field F1 heatmap, LLM
 """
 
 import json
@@ -21,8 +22,7 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 
-from config import (FIELD_SCHEMA, GROUND_TRUTH_PATH, NOISE_LEVELS,
-                    RESULTS_DIR)
+from config import (FIELD_SCHEMA, GROUND_TRUTH_PATH, NOISE_LEVELS, RESULTS_DIR)
 
 
 # constants for figures
@@ -144,31 +144,31 @@ def per_field_f1(tallies):
 
 
 # Plotting
-def plot_f1_by_noise(rules_summary, llm_summary, out_path):
-    """Side by side bar chart of overall F1 per noise level."""
+def plot_metric_by_noise(rules_summary, llm_summary, metric, title, out_path):
+    """Side by side bar chart of one metric across noise tiers.
+
+    Used for both F1 (headline) and recall (secondary). Same shape so
+    figures look consistent in the paper.
+    """
     fig, ax = plt.subplots(figsize=(8, 5))
     x = np.arange(len(NOISE_LEVELS))
     width = 0.35
 
-    ax.bar(x - width / 2, rules_summary["f1"], width,
-           label="Rule-based (regex)", color=COLOR_RULES)
-    ax.bar(x + width / 2, llm_summary["f1"], width,
-           label="LLM (zero-shot)", color=COLOR_LLM)
+    ax.bar(x - width / 2, rules_summary[metric], width, label="Rule based (regex)", color=COLOR_RULES)
+    ax.bar(x + width / 2, llm_summary[metric], width, label="LLM (zero shot)", color=COLOR_LLM)
 
     ax.set_xticks(x)
     ax.set_xticklabels([n.capitalize() for n in NOISE_LEVELS])
-    ax.set_ylabel("F1 score")
-    ax.set_title("Field extraction F1 by OCR noise level")
+    ax.set_ylabel(metric.capitalize())
+    ax.set_title(title)
     ax.set_ylim(0, 1)
     ax.legend(loc="lower left")
     ax.grid(axis="y", alpha=0.3)
 
-    # label each bar with its F1 value for readability
-    for i, (r, l) in enumerate(zip(rules_summary["f1"], llm_summary["f1"])):
-        ax.text(i - width / 2, r + 0.01, f"{r:.2f}",
-                ha="center", fontsize=9)
-        ax.text(i + width / 2, l + 0.01, f"{l:.2f}",
-                ha="center", fontsize=9)
+    # label each bar with its value
+    for i, (r, l) in enumerate(zip(rules_summary[metric], llm_summary[metric])):
+        ax.text(i - width / 2, r + 0.01, f"{r:.2f}", ha="center", fontsize=9)
+        ax.text(i + width / 2, l + 0.01, f"{l:.2f}", ha="center", fontsize=9)
 
     plt.tight_layout()
     plt.savefig(out_path, dpi=FIGURE_DPI)
@@ -183,8 +183,7 @@ def plot_field_heatmap(per_field_df, method_label, out_path):
     pivot = pivot.reindex(FIELD_SCHEMA)
 
     fig, ax = plt.subplots(figsize=(6, 8))
-    sns.heatmap(pivot, annot=True, fmt=".2f", cmap="RdYlGn",
-                vmin=0, vmax=1, ax=ax, cbar_kws={"label": "F1 score"})
+    sns.heatmap(pivot, annot=True, fmt=".2f", cmap="RdYlGn", vmin=0, vmax=1, ax=ax, cbar_kws={"label": "F1 score"})
     ax.set_title(f"{method_label} F1 by field x noise level")
     ax.set_xlabel("Noise level")
     ax.set_ylabel("Field")
@@ -204,11 +203,9 @@ def main():
     with open(RESULTS_DIR / "predictions_llm.json") as f:
         llm_pred = json.load(f)
 
-    # score each method
     rules_tallies = tally_predictions(rules_pred, ground_truth)
     llm_tallies = tally_predictions(llm_pred, ground_truth)
 
-    # headline summaries
     rules_summary = aggregate_by_noise(rules_tallies)
     llm_summary = aggregate_by_noise(llm_tallies)
 
@@ -232,15 +229,24 @@ def main():
     pd.concat([rules_per_field, llm_per_field]).to_csv(
         RESULTS_DIR / "per_field_f1.csv", index=False)
 
-    # figures
-    plot_f1_by_noise(rules_summary, llm_summary,
-                     RESULTS_DIR / "f1_by_noise.png")
-    plot_field_heatmap(rules_per_field, "Rule-based",
-                       RESULTS_DIR / "rules_field_heatmap.png")
-    plot_field_heatmap(llm_per_field, "LLM",
-                       RESULTS_DIR / "llm_field_heatmap.png")
+    # headline figure: F1 by noise (the standard metric)
+    plot_metric_by_noise(
+        rules_summary, llm_summary, metric="f1",
+        title="Field extraction F1 by OCR noise level",
+        out_path=RESULTS_DIR / "f1_by_noise.png",
+    )
 
-    # print headline for terminal review
+    # secondary figure: recall by noise 
+    plot_metric_by_noise(
+        rules_summary, llm_summary, metric="recall",
+        title="Field extraction recall by OCR noise level",
+        out_path=RESULTS_DIR / "recall_by_noise.png",
+    )
+
+    # per field heatmaps
+    plot_field_heatmap(rules_per_field, "Rule-based", RESULTS_DIR / "rules_field_heatmap.png")
+    plot_field_heatmap(llm_per_field, "LLM", RESULTS_DIR / "llm_field_heatmap.png")
+
     print("=== Headline F1 comparison ===")
     print(comparison.to_string(index=False))
     print()

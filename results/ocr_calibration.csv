@@ -1,0 +1,4 @@
+noise,cer,wer
+clean,0.454,0.716
+moderate,0.509,0.804
+heavy,0.894,0.972

@@ -1,0 +1,212 @@
+{
+  "0_clean": {
+    "form_id": 0,
+    "noise": "clean",
+    "text": "V1_2024\n\nMONROVIA PEDIATRIC TRIAGE\n\nOPD Triage Record | Pediatric (under 5)\n\nMONROVIA HEALTH\n\nSynthetic record - not for clinical use\n\nDATE: 04/01/2024\n\nNAME: Patient_000\n\nTIME: 18:17 x!\n\nAM\n\nPM\n\nAGE: 42 months SEX:\n\nOPD CASE:\n\nNO\n\nx\n\nYES\n\nREFERRAL:\n\nNO x!\n\nYES, FROM:\n\nJFK Medical Center\n\nXx] M F\n\nPRESENTING COMPLAINT: diarrhea and vomiting\n\nEMERGENCY SIGNS\nNOT BREATHING\nCENTRAL CYANOSIS\n\nCOMA (AVPU = P or U)\nCONVULSIONS\nSEVERE TRAUMA\nSEVERE BURNS\n\nSEVERE RESPIRATORY DISTRESS\n\nCONTAGIOUS DISEASES -> ISOLATE\n\nRED\n\nIMMEDIATELY\nTRANSFER TO THE\nRESUSCITATION AREA\nTREAT IMMEDIATELY\n\nWEIGH IF POSSIBLE\n\nVITAL SIGNS RR: 23\n\nHR: 123 Sat: 99 T: 39.1\n\nWEIGHT (kg): 4.9\n\nMUAC (mm): 132\n\nTRIAGE\n\nPRIORITY SIGNS\nTINY BABY (<2 months)\n\nPAIN (severe)\nPALLOR (severe)\n\nBURNS (non-severe)\n\nRESP DISTRESS (non-severe)\nRESTLESSNESS, IRRITABILITY, LETHARGY\nREFERRAL FROM ANOTHER CENTRE\n\nTEMPERATURE <36C OR >39C\nTRAUMA/SURG EMERGENCY (non-severe)\nPOISONING (snake/scorpion bite)\n\nYELLOW\n\nPLACE IN PRIORITY IN\nTHE QUEUE\n\nRE-EVALUATE EVERY\n20mins\n\nMAX. WAIT: 1hr\n\nNON-URGENT\n\nX] ABSENCE OF EMERGENCY AND PRIORITY SIGNS\n\nGREEN\nBACK TO MOH\n\nREEVALUATE EVERY 60mins\n\nTRIAGE CLASSIFICATION:\n\nMAX WAIT: 4 hours\n\nRED\n\nYELLOW [X] GREEN\n\nTEST AND TREAT\n\nMalaria RDT:\n\nHemoglobin (g/dL): ah\n\nTreatment given:\n\nPositive Xx\n\nNegative\n\n7\n\nPARACETAMOL 15mg/kg PO\n\nACT (last 3 wks): x\n\nNo\n\nYes BSL (mg/dL): 70\n\nORAL G10% 10mL/kg PO\n\nORS 10mL/kg/loose stool\n\nOBSERVATION\nTIME\n\nPEWS\n\nBSL\n\nNURSE\n\n07:48\n13:21\n\n104\n69\n\nK. Yeaher\nK. Yeaher\n\nNURSE:\n\nSIGNATURE:\n\n",
+    "cer": 0.5800766283524904,
+    "wer": 0.7535545023696683
+  },
+  "0_moderate": {
+    "form_id": 0,
+    "noise": "moderate",
+    "text": "V1_2024\n\nMONROVIA PEDIATRIC TRIAGE\n\nOPD Triage Record | Pediatric (under 5)\n\nMONROVIA HEALTH\nSynthetic record - not for clinical use\n\nDATE: 04/01/2024 TIME: 18:17 am (Cpm\nNAME: Patient_000 AGE: 42 months SEX: KIM OF\nOPDCASE: [INO [XJYES REFERRAL: [JNO [XIYES,FROM: _JFK Medical Center\n\nPRESENTING COMPLAINT: diarrhea and vomiting\n\nTRIAGE\n\nEMERGENCY SIGNS\n\n[NOT BREATHING\n\nCcENTRAL CYANOSIS\n\n(Co SEVERE RESPIRATORY DISTRESS\n\n(coma (Avpu = P or U)\n\nOC convutsions\n\nCO severe TRAUMA\n\nCO severe BURNS\n\nLI CONTAGIOUS DISEASES -> ISOLATE\n\nRED\n\nIMMEDIATELY\nTRANSFER TO THE\nRESUSCITATION AREA\n\nTREAT IMMEDIATELY\n\nWEIGH IF POSSIBLE\n\nVITAL SIGNS RR: 23 HR: 123\n\n: 99 T: 39.1\n\nWEIGHT (kg): 49\n\nMUAC (mm): 132\n\nPRIORITY SIGNS\n(TINY BABY (<2 months)\nLD TEMPERATURE <36C OR >39C\n(J TRAUMA/SURG EMERGENCY (non-severe)\nLJ POISONING (snake/scorpion bite)\n(PAIN (severe)\nLJ PALLOR (severe)\nLD RESP DISTRESS (non-severe)\n(] RESTLESSNESS, IRRITABILITY, LETHARGY\n(] REFERRAL FROM ANOTHER CENTRE\nLJ BURNS (non-severe)\n\nYELLOW\n\nPLACE IN PRIORITY IN\nTHE QUEUE\n\nRE-EVALUATE EVERY\n20mins\n\nMAX. WAIT: thr\n\nNON-URGENT GREEN\n\n[K] ABSENCE OF EMERGENCY AND PRIORITY SIGNS BACK TO MOH\nREEVALUATE EVERY 60mins\n\nAX WAIT\n\nTRIAGE CLASSIFICATION: [)RED (YELLOW GREEN\n\nTEST AND TREAT\n\nMalaria RDT: C Positive [X] Negative ACT (last 3 wks): IX] Yes CNo BSL (mg/dL): 70\n\nHemoglobin (g/dL): 11.7\n\nTreatment given: (1 PARACETAMOL 15mg/kg PO (ORAL G10% 10mL/kg PO (ors 10mLkg/oose stool\n\nOBSERVATION\n\nTIME PEWS BSL NURSE\n\n07:48 1 104 K. Yeaher\n\n13:21 2 69 K. Yeaher\n\nNURSE: SIGNATURE:\n\n",
+    "cer": 0.378544061302682,
+    "wer": 0.6777251184834123
+  },
+  "0_heavy": {
+    "form_id": 0,
+    "noise": "heavy",
+    "text": "MONROVIA PEDIATR |AGE\n\nOPO Triage RQ | Pectatrie s)\n\nTEST ANDO TREAT\nMewerot =) pom Ol negate ACT fastens: = =ves One ORs: 7\nMemogomen gat)\n\nTreatment gven \u2018emgage PO Olona ares Omang PO CLORS tomiAgtocse soe\n\n",
+    "cer": 0.8934865900383142,
+    "wer": 0.966824644549763
+  },
+  "1_clean": {
+    "form_id": 1,
+    "noise": "clean",
+    "text": "V1_2024\n\nMONROVIA PEDIATRIC TRIAGE\n\nOPD Triage Record | Pediatric (under 5)\n\nMONROVIA HEALTH\n\nSynthetic record - not for clinical use\n\nAM X] PM\n\nDATE: 25/06/2024 TIME: 08:05\nNAME: Patient_001\nOPD CASE: NO [Xl YES REFERRAL:\n\nAGE: 15 months\n\nPRESENTING COMPLAINT: burns on left arm\n\nNO X] YES, FROM:\n\nSEX: [X]M F\n\nELWA Hospital\n\nEMERGENCY SIGNS\n\nNOT BREATHING\n\nCENTRAL CYANOSIS\n\nSEVERE RESPIRATORY DISTRESS\n\nCOMA (AVPU = P or U)\nCONVULSIONS\n\nSEVERE TRAUMA\n\nSEVERE BURNS\n\nCONTAGIOUS DISEASES -> ISOLATE\n\nRED\n\nIMMEDIATELY\nTRANSFER TO THE\nRESUSCITATION AREA\nTREAT IMMEDIATELY\n\nWEIGH IF POSSIBLE\n\nVITAL SIGNS RR: 39 HR: 96\n\n88 T: 38.6\n\nWEIGHT (kg): 14.8\n\nMUAC (mm): 129\n\nTRIAGE\n\nPRIORITY SIGNS\n\nTINY BABY (<2 months)\n\nTEMPERATURE <36C OR >39C\nTRAUMA/SURG EMERGENCY (non-severe)\nPOISONING (snake/scorpion bite)\n\nPAIN (severe)\n\nYELLOW\n\nPLACE IN PRIORITY IN\nTHE QUEUE\n\nRE-EVALUATE EVERY\n\nPALLOR (severe) 20mins\nRESP DISTRESS (non-severe)\nRESTLESSNESS, IRRITABILITY, LETHARGY MAX. WAIT: 1hr\nX] REFERRAL FROM ANOTHER CENTRE\nBURNS (non-severe)\nNON-URGENT GREEN\nABSENCE OF EMERGENCY AND PRIORITY SIGNS BACK TO MOH\n\nREEVALUATE EVERY 60mins\n\nMAX WAIT: 4 hours\n\nTRIAGE CLASSIFICATION: RED X] YELLOW GREEN\n\nTEST AND TREAT\n\nMalaria RDT: Positive X] Negative ACT (last 3 wks): Yes x BSL (mg/dL): 50\nHemoglobin (g/dL): 11.3\n\nTreatment given: PARACETAMOL 15mg/kg PO\n\nORAL G10% 10mL/kg PO\n\nORS 10mL/kg/loose stool\n\nOBSERVATION\n\nTIME PEWS BSL NURSE\n13:17 3 100 K. Yeaher\nNURSE: SIGNATURE:\n\n",
+    "cer": 0.43548387096774194,
+    "wer": 0.6650943396226415
+  },
+  "1_moderate": {
+    "form_id": 1,
+    "noise": "moderate",
+    "text": "V1_2024\n\nMONROVIA PEDIATRIC TRIAGE\n\nOPD Triage Record | Pediatric (under 5)\n\nMONROVIA HEALTH\nSynthetic record - not for clinical use\n\nDATE: 25/06/2024 TIME: 08:05\nNAME: Patient_001 AGE:\nOPDCASE: [JNO [lYes REFERRAL:\n\nPRESENTING COMPLAINT: burns on left arm\n\nOlam PM\n15 months sex: Kim (CF\n[no [X]YES,FROM: _ELWA Hospital\n\nTRIAGE\n\nEMERGENCY SIGNS\n\nCINOT BREATHING\n\nCO ceNTRAL CYANOSIS\n\n( severe RESPIRATORY DISTRESS\n(1 coma (AVPU =P or U)\n\nCL convutsions\n\nD Severe TRAUMA\n\nRED\n\nIMMEDIATELY\nTRANSFER TO THE\nRESUSCITATION AREA\n\nTREAT IMMEDIATELY\n\nCO severe BURNS WEIGH IF POSSIBLE\nCI contaaious DISEASES -> ISOLATE\nVITAL SIGNS RR: 39 HR: 96 Sat: 88 T: 38.6\nWEIGHT (kg): 14.8 MUAC (mm): 129\nJ\n\nPRIORITY SIGNS YELLOW\n\n(1 tiny Basy (<2 months)\n\n(CL) TEMPERATURE <36C OR >39C PLACE IN PRIORITY IN\n(CJ TRAUMA/SURG EMERGENCY (non-severe) THE QUEUE\n\n(J POISONING (snake/scorpion bite)\n\nLL) PAIN (severe) RE-EVALUATE EVERY\n(] PALLOR (severe) 20mins\n\n(D RESP DISTRESS (non-severe)\n\n(J) RESTLESSNESS, IRRITABILITY, LETHARGY MAX. WAIT: thr\n\n[xX] REFERRAL FROM ANOTHER CENTRE\n\n(] BURNS (non-severe)\n\nNON-URGENT GREEN\n(CI ABSENCE OF EMERGENCY AND PRIORITY SIGNS BACK TO MOH\nREEVALUATE EVERY 60mins\nMAX WAIT:\nTRIAGE CLASSIFICATION: [J] RED YELLOW (J GREEN\nTEST AND TREAT\nMalaria RDT: Positive [X) Negative ACT (last 3 wks): LyYes {K] No BSL (mg/dl): 50\nHemoglobin (g/dL): 11.3\nTreatment given: (CI PARACETAMOL 15mg/kg PO (ORAL G10% 10mL/kg PO (ons 10mLkg/loose stool\n\u2014\nOBSERVATION\nTIME PEWS BSL NURSE\n13:17 3 100 K. Yeaher\nNURSE: SIGNATURE:\n\n",
+    "cer": 0.5660522273425499,
+    "wer": 0.8584905660377359
+  },
+  "1_heavy": {
+    "form_id": 1,
+    "noise": "heavy",
+    "text": "vi 2oee\nMONROVIA PEDIATRIC TRIAGE onmowe HEALTH\n\nOPO Thage Record | Pediatric (under 8) Syrtrete record - not tor chewoat wee\n\nOATE: 26062026 _ -o = = oM wm\nmame Pete. anh AGE: 1S monte _\nopocase: (no Gives\n\nDona a10% 10mg PO Coos ensgumeens\n\n",
+    "cer": 0.8993855606758833,
+    "wer": 0.9811320754716981
+  },
+  "2_clean": {
+    "form_id": 2,
+    "noise": "clean",
+    "text": "V1_2024\n\nMONROVIA PEDIATRIC TRIAGE\n\nOPD Triage Record | Pediatric (under 5)\n\nMONROVIA HEALTH\n\nSynthetic record - not for clinical use\n\nDATE: 12/03/2024 TIME: 12:22 X] AM PM\nNAME: Patient_002 AGE: 55 months SEX: M X] F\nOPD CASE:  [X]NO YES REFERRAL: NO X] YES, FROM: Community Clinic - Paynesville\nPRESENTING COMPLAINT: cough and difficulty breathing\nEMERGENCY SIGNS RED\nNOT BREATHING\nCENTRAL CYANOSIS IMMEDIATELY\nSEVERE RESPIRATORY DISTRESS TRANSFER TO THE\nRESUSCITATION AREA\nCOMA (AVPU = P or U)\nCONVULSIONS TREAT IMMEDIATELY\nSEVERE TRAUMA\nSEVERE BURNS WEIGH IF POSSIBLE\nCONTAGIOUS DISEASES -> ISOLATE\nVITAL SIGNS RR: 40 HR: 90 Sat: 96 T: 38.6\nWEIGHT (kg): 6.6 MUAC (mm): 129\nlu\n6 PRIORITY SIGNS YELLOW\n<x TINY BABY (<2 months)\na TEMPERATURE <36C OR >39C PLACE IN PRIORITY IN\n- TRAUMA/SURG EMERGENCY (non-severe) THE QUEUE\nPOISONING (snake/scorpion bite)\nPAIN (severe) RE-EVALUATE EVERY\nPALLOR (severe) 20mins\nRESP DISTRESS (non-severe)\nRESTLESSNESS, IRRITABILITY, LETHARGY MAX. WAIT: 1hr\nREFERRAL FROM ANOTHER CENTRE\nBURNS (non-severe)\nNON-URGENT GREEN\nX] ABSENCE OF EMERGENCY AND PRIORITY SIGNS BACK TO MOH\nREEVALUATE EVERY 60mins\nMAX WAIT: 4 hours\nTRIAGE CLASSIFICATION: RED YELLOW [X] GREEN\nTEST AND TREAT\nMalaria RDT: X] Positive Negative ACT (last 3 wks): Yes Xx] No BSL (mg/dL): 52\nHemoglobin (g/dL): 8.5\nTreatment given: X] PARACETAMOL 15mg/kg PO ORAL G10% 10mL/kg PO X] ORS 10mL/kg/loose stool\n\nOBSERVATION\n\nTIME PEWS BSL NURSE\n16:56 5 80 K. Yeaher\nNURSE: SIGNATURE:\n\n",
+    "cer": 0.5156130997715156,
+    "wer": 0.7924528301886793
+  },
+  "2_moderate": {
+    "form_id": 2,
+    "noise": "moderate",
+    "text": "Vt_2024\n\nMONROVIA PEDIATRIC TRIAGE\n\nOPD Triage Record | Pediatric (under 5)\n\nMONROVIA HEALTH\nSynthetic record - not for clinical use\n\nDATE: 12/03/2024 TIME: 12:22 Kam [JPM\nNAME: Patient_002 AGE: 55 months SEX: Om IF\nOPDCASE: [XINO- [lyes REFERRAL: [JNO [X]YES,FROM: _Community Clinic - Paynesville\n\nPRESENTING COMPLAINT: cough and difficulty breathing _\n\nTRIAGE\n\nEMERGENCY SIGNS\n\nCINOoT BREATHING\n\nCI ceNTRAL CYANosiS\n\n(CO SEVERE RESPIRATORY DISTRESS\n\n(coma (avpu =P or U)\nOD convursions\n\nCO severe TRAUMA\nCO severe BURNS\nC1 contaaious DISEASES -> ISOLATE\n\nRED\nIMMEDIATELY\nTRANSFER TO THE\nRESUSCITATION AREA\nTREAT IMMEDIATELY\n\nWEIGH IF POSSIBLE\n\nVITAL SIGNS RR: 40 HR: 90\n\nSat: 96 T: 38.6\n\nWEIGHT (kg): 6.6\n\nMUAC (mm): 129\n\nLJ POISONING (snake/scorpion bite)\n\n(] PAIN (severe)\n\n() PALLOR (severe)\n\nLJ RESP DISTRESS (non-severe)\n\n(J RESTLESSNESS, IRRITABILITY, LETHARGY\n(J REFERRAL FROM ANOTHER CENTRE\n\noO BURNS (non-severe)\n\n=\nPRIORITY SIGNS YELLOW\n( TINY BABY (<2 months)\n\nO TEMPERATURE <36C OR >39C PLACE IN PRIORITY IN\n(] TRAUMA/SURG EMERGENCY (non-severe) THE QUEUE\n\nRE-EVALUATE EVERY\n20mins\n\nMAX. WAIT: thr\n\nNON-URGENT GREEN\n[X] ABSENCE OF EMERGENCY AND PRIORITY SIGNS BACK TO MOH\nREEVALUATE EVERY 60mins\nEX WAIT:\n\nTRIAGE CLASSIFICATION: []RED (YELLOW GREEN\n\nTEST AND TREAT\n\nMalaria ROT: [X] Positive C negative ACT (last 3 wks): O Yes [KK] No BSL (mg/dL): 52\n\nHemoglobin (g/dL): 8.5\n\nTreatment given: [X] PARACETAMOL 15mg/kg PO (ORAL G10% 10mLkg PO IX] ORS 10mUkg/oose stool!\nOBSERVATION\n\nTIME PEWS BSL NURSE\n\n16:56 5 80 K. Yeaher\nNURSE:\n\nSIGNATURE:\n\n",
+    "cer": 0.5384615384615384,
+    "wer": 0.8207547169811321
+  },
+  "2_heavy": {
+    "form_id": 2,
+    "noise": "heavy",
+    "text": "vi 20m\n\nMONROVIA PEDIATRIC TRIAGE ssonmevon vena\n\nOPO Trage Record | Pechatrc (under 5) Syren record cot tr ira ne\n\nTE: 1222 fa OP\nAGE 55 months _ sex: Ou Wr\nRerenRa. [NO DOVES. FROM Community Cinic - Paynenvite\n\nawe hot i) Powe C Nemgate actoataexs: Clr Gln aero 2\n\nPemogioten 19H es\nTreatment gre WH PARACETAMOL tiemgtg PO Clon ares tom tg PO W ORS rom ngtoose stot\n\n",
+    "cer": 0.8537699923838538,
+    "wer": 0.9669811320754716
+  },
+  "3_clean": {
+    "form_id": 3,
+    "noise": "clean",
+    "text": "V1_2024\n\nMONROVIA PEDIATRIC TRIAGE\n\nOPD Triage Record | Pediatric (under 5)\n\nMONROVIA HEALTH\n\nSynthetic record - not for clinical use\n\nDATE: 21/08/2024 TIME: 13:56\n\nAM X] PM\n\nNAME: Patient_003\n\nAGE: 15 months\n\nOPD CASE:\n\nNO Xx] YES\n\nREFERRAL: X] NO\n\nYES, FROM:\n\nPRESENTING COMPLAINT: severe abdominal pain\n\nSEX: [X]M F\n\nEMERGENCY SIGNS\n\nNOT BREATHING\n\nX] CENTRAL CYANOSIS\n\nSEVERE RESPIRATORY DISTRESS\n\nCOMA (AVPU = P or U)\nCONVULSIONS\n\nX] SEVERE TRAUMA\n\nSEVERE BURNS\n\nCONTAGIOUS DISEASES -> ISOLATE\n\nRED\n\nIMMEDIATELY\nTRANSFER TO THE\nRESUSCITATION AREA\nTREAT IMMEDIATELY\n\nWEIGH IF POSSIBLE\n\nVITAL SIGNS RR: 27 HR: 127 Sat: 96\n\nT: 37.9\n\nWEIGHT (kg): 19.4 MUAG (mm):\n\n132\n\nTRIAGE\n\nPRIORITY SIGNS\n\nTINY BABY (<2 months)\n\nTEMPERATURE <36C OR >39C\nTRAUMA/SURG EMERGENCY (non-severe)\nPOISONING (snake/scorpion bite)\n\nPAIN (severe)\n\nPALLOR (severe)\n\nRESP DISTRESS (non-severe)\nRESTLESSNESS, IRRITABILITY, LETHARGY\nREFERRAL FROM ANOTHER CENTRE\nBURNS (non-severe)\n\nYELLOW\n\nPLACE IN PRIORITY IN\nTHE QUEUE\n\nRE-EVALUATE EVERY\n20mins\n\nMAX. WAIT: 1hr\n\nNON-URGENT\n\nABSENCE OF EMERGENCY AND PRIORITY SIGNS\n\nGREEN\nBACK TO MOH\n\nREEVALUATE EVERY 60mins\n\nTRIAGE CLASSIFICATION: [X] RED\n\nYELLOW\n\nMAX WAIT: 4 hours\n\nGREEN\n\nTEST AND TREAT\n\nMalaria RDT:\n\nPositive Xx\n\nNegative ACT (last 3 wks):\n\nHemoglobin (g/dL): 8.0\n\nTreatment given: X] PARACETAMOL 15mg/kg PO\n\nYes X] No\n\nORAL G10% 10mL/kg PO\n\nBSL (mg/dL): 59\n\nORS 10mL/kg/loose stool\n\nOBSERVATION\nTIME PEWS BSL\n\nNURSE\n\n13:38 3 93\n11:35 (0) 103\n\nK. Yeaher\nK. Yeaher\n\nNURSE:\n\nSIGNATURE:\n\n",
+    "cer": 0.3726993865030675,
+    "wer": 0.6540284360189573
+  },
+  "3_moderate": {
+    "form_id": 3,
+    "noise": "moderate",
+    "text": "V1_2024\n\nMONROVIA PEDIATRIC TRIAGE\n\nOPD Triage Record | Pediatric (under 5)\n\nMONROVIA HEALTH\nSynthetic record - not for clinical use\n\nDATE: 21/08/2024 TIME: 13:56 Olam [XPM\nNAME: Patient_003 AGE: 15 months Sex: Kim (OF\nOPDCASE: [JNO [YES REFERRAL: [X]NO [J YES, FROM:\n\nPRESENTING COMPLAINT: severe abdominal pain\n\nTRIAGE\n\nEMERGENCY SIGNS\n\n(NOT BREATHING\n\n[X] CENTRAL CYANOSIS\n\n(CO SEVERE RESPIRATORY DISTRESS\n(coma (AvPu = P or U)\n\nCL convutsions\n\n[x] SEVERE TRAUMA\n\n(Severe BURNS\n\nLI CONTAGIOUS DISEASES -> ISOLATE\n\nRED\n\nIMMEDIATELY\nTRANSFER TO THE\nRESUSCITATION AREA\n\nTREAT IMMEDIATELY\n\nWEIGH IF POSSIBLE\n\nVITAL SIGNS RR: 27 HR: 127\n\n: 96 T: 37.9\n\nWEIGHT (kg): 19.4 MUAC (mm): 132\n\nPRIORITY SIGNS YELLOW\n(TINY BABY (<2 months)\n\nLD TEMPERATURE <36C OR >39C PLACE IN PRIORITY IN\n(] TRAUMA/SURG EMERGENCY (non-severe) THE QUEUE\n\nL] POISONING (snake/scorpion bite)\n\n(PAIN (severe)\n\nLJ PALLOR (severe)\n\nLD RESP DISTRESS (non-severe)\n\n(_] RESTLESSNESS, IRRITABILITY, LETHARGY\n(J REFERRAL FROM ANOTHER CENTRE\n\n(CJ BURNS (non-severe)\n\nRE-EVALUATE EVERY\n20mins\n\nMAX. WAIT: thr\n\nNON-URGENT GREEN\n\n(CI ABSENCE OF EMERGENCY AND PRIORITY SIGNS BACK TO MOH\nREEVALUATE EVERY 60mins\n\nAX WATT\n\nTRIAGE CLASSIFICATION: RED (YELLOW (J GREEN\n\nTEST AND TREAT\n\nMalaria ROT: C1 Positive [X] Negative ACT (last 3 wks): 0 Yes [X] No BSL (mg/dL): 59\n\nHemoglobin (g/dL): 8.0\n\nTreatment given: [KX] PARACETAMOL 15mg/kg PO (CORAL G10% 10mL/kg PO (ors 10mUkg/oose stool\n\nOBSERVATION\n\nTIME PEWS BSL NURSE\n\n13:38 3 93 K. Yeaher\n\n11:35 0 103 K. Yeaher\n\nNURSE: SIGNATURE:\n\n",
+    "cer": 0.4279141104294479,
+    "wer": 0.7298578199052133
+  },
+  "3_heavy": {
+    "form_id": 3,
+    "noise": "heavy",
+    "text": "vi 20m\n\nMONROVIA PEDIATRIC TRIAGE somone\n\nOPD Trage Record | Pechatrc (under 5) Syr@et record rot tor carat ne\n\nMawerot =) Pose i) acteat sees: Clyee ne a\nMemogoon gt) 80\nTreament gen (PARACETAMOL timgttg PO Clon Gren toning PO CL ORS tom ngtoose soot\n\n",
+    "cer": 0.8780674846625767,
+    "wer": 0.9715639810426541
+  },
+  "4_clean": {
+    "form_id": 4,
+    "noise": "clean",
+    "text": "V1_2024\n\nMONROVIA PEDIATRIC TRIAGE\n\nOPD Triage Record | Pediatric (under 5)\n\nMONROVIA HEALTH\n\nSynthetic record - not for clinical use\n\nDATE: 04/11/2024 TIME:\n\n15:48 AM X] PM\n\nNAME: Patient_004\n\nOPD CASE:\n\nNO Xx] YES\n\nREFERRAL: X] NO\n\nAGE: 48 months\n\nYES, FROM:\n\nPRESENTING COMPLAINT: cough and difficulty breathing\n\nSEX: M Xx] F\n\nEMERGENCY SIGNS\n\nNOT BREATHING\n\nCENTRAL CYANOSIS\n\nSEVERE RESPIRATORY DISTRESS\n\nCOMA (AVPU = P or U)\nCONVULSIONS\n\nSEVERE TRAUMA\n\nSEVERE BURNS\n\nCONTAGIOUS DISEASES -> ISOLATE\n\nRED\n\nIMMEDIATELY\nTRANSFER TO THE\nRESUSCITATION AREA\nTREAT IMMEDIATELY\n\nWEIGH IF POSSIBLE\n\nVITAL SIGNS RR: 33 HR: 90\n\nSat: 95 T: 36.0\n\nWEIGHT (kg): 18.9\n\nMUAC (mm): 121\n\nTRIAGE\n\nPRIORITY SIGNS\n\nTINY BABY (<2 months)\n\nX| TEMPERATURE <36C OR >39C.\nTRAUMA/SURG EMERGENCY (non-severe)\nPOISONING (snake/scorpion bite)\n\nPAIN (severe)\n\nPALLOR (severe)\n\nRESP DISTRESS (non-severe)\nRESTLESSNESS, IRRITABILITY, LETHARGY\nREFERRAL FROM ANOTHER CENTRE\nBURNS (non-severe)\n\nEd\n\nEd\n\nYELLOW\n\nPLACE IN PRIORITY IN\nTHE QUEUE\n\nRE-EVALUATE EVERY\n20mins\n\nMAX. WAIT: 1hr\n\nNON-URGENT\n\nABSENCE OF EMERGENCY AND PRIORITY SIGNS\n\nGREEN\nBACK TO MOH\n\nREEVALUATE EVERY 60mins\n\nTRIAGE CLASSIFICATION:\n\nRED\n\nYELLOW\n\nMAX WAIT: 4 hours\n\nGREEN\n\nTEST AND TREAT\n\nMalaria RDT:\n\nPositive X]} Negative\n\nHemoglobin (g/dL): 9.4\n\nTreatment given: X] PARACETAMOL 15mg/kg PO\n\nACT (last 3 wks): Yes IX} No\n\nORAL G10% 10mL/kg PO\n\nBSL (mg/dL): 64\n\nORS 10mL/kg/loose stool\n\nOBSERVATION\nTIME PEWS\n\nBSL NURSE\n\n16:20 3\n\n61 K. Yeaher\n\nNURSE:\n\nSIGNATURE:\n\n",
+    "cer": 0.41825095057034223,
+    "wer": 0.6792452830188679
+  },
+  "4_moderate": {
+    "form_id": 4,
+    "noise": "moderate",
+    "text": "V1_2024\n\nMONROVIA PEDIATRIC TRIAGE\n\nOPD Triage Record | Pediatric (under 5)\n\nMONROVIA HEALTH\nSynthetic record - not for clinical use\n\nDATE: 04/11/2024 TIME: 15:48 Clam [XPM\nNAME: Patient_004 AGE: 48 months SEX: Om ~ fF\nOPDCASE: [JNO [XlYes REFERRAL:  [X]NO_ [] YES, FROM:\n\nPRESENTING COMPLAINT: cough and difficulty breathing\n\nTRIAGE\n\nEMERGENCY SIGNS\n\n(NOT BREATHING\n\n(CO ceNTRAL CYANOSIS\n\n(CI severe RESPIRATORY DISTRESS\n\n(coma (AVPU = P or U)\n\nOC convutsions\n\nCO severe TRAUMA\n\n(CO severe BURNS\n\nLI contaaious DISEASES -> ISOLATE\n\nRED\n\nIMMEDIATELY\nTRANSFER TO THE\nRESUSCITATION AREA\n\nTREAT IMMEDIATELY\n\nWEIGH IF POSSIBLE\n\nVITAL SIGNS RR: 33 HR: 90 Sat: 95 T: 36.0\n\nWEIGHT (kg): 18.9 MUAC (mm): 121\n\nPRIORITY SIGNS YELLOW\n\nCO Tiny BaByY (<2 months)\n\nXl) TEMPERATURE <36C OR >39C. PLACE IN PRIORITY IN\n[x] TRAUMA/SURG EMERGENCY (non-severe) THE QUEUE\n\nLJ POISONING (snake/scorpion bite)\n\nC PAIN (severe)\n\nCJ PALLOR (severe)\n\nLJ RESP DISTRESS (non-severe)\n\n(J RESTLESSNESS, IRRITABILITY, LETHARGY\n[X] REFERRAL FROM ANOTHER CENTRE\n\noO BURNS (non-severe)\n\nRE-EVALUATE EVERY\n20mins\n\nMAX. WAIT: thr\n\nNON-URGENT GREEN\n(ABSENCE OF EMERGENCY AND PRIORITY SIGNS BACK TO MOH\nREEVALUATE EVERY 60mins\nMAX WAIT:\nTRIAGE CLASSIFICATION: []RED YELLOW (J GREEN\nTEST AND TREAT\nMalaria ROT: C1 Positive (K] Negative ACT (last 3 wks): Ol yes [KX] No BSL (mg/dl): 64\n\nHemoglobin (g/dL): 9.4\n\nTreatment given: [K] PARACETAMOL 15mg/kg PO\n\nCORAL G10% 10mL/kg PO\n\n(ORS 10mLikgioose stool\n\nOBSERVATION\nTIME PEWS BSL NURSE\n16:20 3 61 K. Yeaher\nNURSE: SIGNATURE:\n\n",
+    "cer": 0.46539923954372625,
+    "wer": 0.8113207547169812
+  },
+  "4_heavy": {
+    "form_id": 4,
+    "noise": "heavy",
+    "text": "MONROVIA PEDIATRIC TRIAGE\n\nOPO Triage Record | Pechatric (under 5)\n\nwawerot =) Poste Oh Nemgatwe ACT Gast 3 wes) Ove fw\nMemoguen gm 94\nTreatment given E) PARACETAMOX tSmgtng PO Comm Gres tomng PO\n\nBRimgm) = \u2014 64\n",
+    "cer": 0.8889733840304183,
+    "wer": 0.9528301886792453
+  },
+  "5_clean": {
+    "form_id": 5,
+    "noise": "clean",
+    "text": "V1_2024\n\nMONROVIA PEDIATRIC TRIAGE\n\nOPD Triage Record | Pediatric (under 5)\n\nMONROVIA HEALTH\n\nSynthetic record - not for clinical use\n\nDATE: 12/05/2024\n\nTIME:\n\n10:03\n\nX] AM\n\nPM\n\nNAME: Patient_005\n\nOPD CASE:\n\nNO\n\nXx] YES\n\nAGE: 9 months\n\nREFERRAL:\n\nPRESENTING COMPLAINT: cough and difficulty breathing\n\nNO X] YES, FROM:\n\nSEX: [X]M F\n\nCommunity Clinic - Paynesville\n\nEMERGENCY SIGNS\n\nNOT BREATHING\nCENTRAL CYANOSIS\n\nCONVULSIONS\nSEVERE TRAUMA\nSEVERE BURNS\n\nCOMA (AVPU = P or U)\n\nSEVERE RESPIRATORY DISTRESS\n\nCONTAGIOUS DISEASES -> ISOLATE\n\nRED\n\nIMMEDIATELY\nTRANSFER TO THE\nRESUSCITATION AREA\nTREAT IMMEDIATELY\n\nWEIGH IF POSSIBLE\n\nTRIAGE\n\nVITAL SIGNS RR: 45 HR: 152 89 T: 39.4\nWEIGHT (kg): 14.7 MUAC (mm): 113\nPRIORITY SIGNS YELLOW\nTINY BABY (<2 months)\nTEMPERATURE <36C OR >39C PLACE IN PRIORITY IN\nTRAUMA/SURG EMERGENCY (non-severe) THE QUEUE\nPOISONING (snake/scorpion bite)\nPAIN (severe) RE-EVALUATE EVERY\nPALLOR (severe) 20mins\nRESP DISTRESS (non-severe)\nRESTLESSNESS, IRRITABILITY, LETHARGY MAX. WAIT: thr\nREFERRAL FROM ANOTHER CENTRE\nBURNS (non-severe)\nNON-URGENT GREEN\nIX] ABSENCE OF EMERGENCY AND PRIORITY SIGNS BACK TO MOH\nREEVALUATE EVERY 60mins\nMAX WAIT: 4 hours\nTRIAGE CLASSIFICATION: RED YELLOW [X] GREEN\nTEST AND TREAT\nMalaria RDT: X] Positive Negative ACT (last 3 wks): Yes Xx] No BSL (mg/dL): 99\nHemoglobin (g/dL): 13.3\n\nTreatment given:\n\nPARACETAMOL 15mg/kg PO\n\nORAL G10% 10mL/kg PO\n\nORS 10mL/kg/loose stool\n\nOBSERVATION\nTIME PEWS BSL NURSE\n11:25 5 101 K. Yeaher\n12:28 4 88 K. Yeaher\n08:15 1 64 K. Yeaher\nNURSE: SIGNATURE:\n\n",
+    "cer": 0.4954337899543379,
+    "wer": 0.7688679245283019
+  },
+  "5_moderate": {
+    "form_id": 5,
+    "noise": "moderate",
+    "text": "V1_2024\n\nMONROVIA PEDIATRIC TRIAGE MONROVIA HEALTH\nOPD Triage Record | Pediatric (under 5) Synthetic record - not for clinical use\nDATE: 12/05/2024 TIME: 10:03 \u2014XjamM [J)PM\nNAME: Patient_005 AGE: 9 months sex: Kim (CF\nOPDCASE: [JNO [lYES REFERRAL: [INO [X]YES,FROM: _Community Clinic - Paynesville\n\nPRESENTING COMPLAINT: cough and difficulty breathing\n\nTRIAGE\n\nEMERGENCY SIGNS RED\n(NOT BREATHING\n\nCO cENTRAL CYANOSIS IMMEDIATELY\n(Cl severe RESPIRATORY DISTRESS TRANSFER TO THE\n\nRESUSCITATION AREA\n(coma (Avpu = P or U)\n\n. aan eeuMa TREAT IMMEDIATELY\n(CO severe BURNS WEIGH IF POSSIBLE\nCI contaaious DISEASES -> ISOLATE\n\nVITAL SIGNS RR: 45 HR: 152 Sat: 89 T: 39.4\nWEIGHT (kg): 14.7 MUAC (mm): 113\nPRIORITY SIGNS YELLOW\nCO Tiny BABY (<2 months)\n(CC TEMPERATURE <36C OR >39C PLACE IN PRIORITY IN\nLJ TRAUMA/SURG EMERGENCY (non-severe) THE QUEUE\nLJ POISONING (snake/scorpion bite)\nLJ PAIN (severe) RE-EVALUATE EVERY\nLJ PALLOR (severe) 20mins\n] RESP DISTRESS (non-severe)\n(J RESTLESSNESS, IRRITABILITY, LETHARGY MAX. WAIT: thr\n(J REFERRAL FROM ANOTHER CENTRE\noO BURNS (non-severe)\n\nNON-URGENT GREEN\n[K] ABSENCE OF EMERGENCY AND PRIORITY SIGNS BACK TO MOH\nREEVALUATE EVERY 60mins\nAX WAIT\nTRIAGE CLASSIFICATION: []RED (YELLOW GREEN\nTEST AND TREAT\nMalaria ROT: KX] Positive C negative ACT (last 3 wks): DO ves [K] No BSL (mg/dL): 99\n\nHemoglobin (g/dL): 13.3\n\nTreatment given: (1 PARACETAMOL 15mg/kg PO (ORAL G10% 10mL/kg PO (ors 10mLkg/oose stool\nOBSERVATION\n\nTIME PEWS BSL NURSE\n\n11:25 5 101 K. Yeaher\n\n12:28 ay 88 K. Yeaher\n\n08:15 1 64 K. Yeaher\n\nNURSE: SIGNATURE:\n\n",
+    "cer": 0.591324200913242,
+    "wer": 0.8632075471698113
+  },
+  "5_heavy": {
+    "form_id": 5,
+    "noise": "heavy",
+    "text": "vi_ zon\n\nMONROVIA PEDIATRIC a\n\nOPO Trage Record | Pechatrc (under 5)\n\nawe rot = EE) Pose Do negere actoataexy Chr Ene\nremogoon gt) NII\n\nTreatment gre Ciranacerasecs eggote 70 Donn Gt0n 10m tg PO\n\nMONROVIA HEALTH\nSyrete record not tor carcass\n\nReo\n\nCl ORS toni ngtoose soot\n\n",
+    "cer": 0.8881278538812786,
+    "wer": 0.9811320754716981
+  },
+  "6_clean": {
+    "form_id": 6,
+    "noise": "clean",
+    "text": "V1_2024\n\nMONROVIA PEDIATRIC TRIAGE\n\nMONROVIA HEALTH\n\nOPD Triage Record | Pediatric (under 5) Synthetic record - not for clinical use\nDATE: 01/10/2024 TIME: 15:14 Xx] AM PM\nNAME: Patient_006 AGE: 23 months SEX: X]mM F\nOPD CASE: NO Xx] YES REFERRAL: NO X] YES, FROM: Phebe Hospital\n\nPRESENTING COMPLAINT: cough and difficulty breathing\n\nEMERGENCY SIGNS\n\nNOT BREATHING\n\nCENTRAL CYANOSIS\n\nSEVERE RESPIRATORY DISTRESS\n\nCOMA (AVPU = P or U)\nCONVULSIONS\n\nSEVERE TRAUMA\n\nSEVERE BURNS\n\nCONTAGIOUS DISEASES -> ISOLATE\n\nRED\n\nIMMEDIATELY\nTRANSFER TO THE\nRESUSCITATION AREA\nTREAT IMMEDIATELY\n\nWEIGH IF POSSIBLE\n\nVITAL SIGNS RR: 40 HR: 83\n\nSat: 91 T: 36.2\n\nWEIGHT (kg): 3.7\n\nMUAC (mm): 126\n\nTRIAGE\n\nPRIORITY SIGNS\n\nTINY BABY (<2 months)\n\nTEMPERATURE <36C OR >39C\nTRAUMA/SURG EMERGENCY (non-severe)\nPOISONING (snake/scorpion bite)\n\nPAIN (severe)\n\nYELLOW\n\nPLACE IN PRIORITY IN\nTHE QUEUE\n\nRE-EVALUATE EVERY\n\nPALLOR (severe) 20mins\nRESP DISTRESS (non-severe)\nRESTLESSNESS, IRRITABILITY, LETHARGY MAX. WAIT: 1hr\nREFERRAL FROM ANOTHER CENTRE\nBURNS (non-severe)\nNON-URGENT GREEN\nX] ABSENCE OF EMERGENCY AND PRIORITY SIGNS BACK TO MOH\n\nREEVALUATE EVERY 60mins\n\nMAX WAIT: 4 hours\n\nTRIAGE CLASSIFICATION: RED YELLOW [X] GREEN\nTEST AND TREAT\nMalaria RDT: X] Positive Negative ACT (last 3 wks): X] Yes No BSL (mg/dL): 105\nHemoglobin (g/dL): 8.6\nTreatment given: PARACETAMOL 15mg/kg PO ORAL G10% 10mL/kg PO X] ORS 10mL/kg/loose stool\nOBSERVATION\nTIME PEWS BSL NURSE\n13:22 3 86 K. Yeaher\n14:55 5 63 K. Yeaher\n17:41 5 66 K. Yeaher\nNURSE: SIGNATURE:\n\n",
+    "cer": 0.44021325209444023,
+    "wer": 0.7028301886792453
+  },
+  "6_moderate": {
+    "form_id": 6,
+    "noise": "moderate",
+    "text": "V1_2024\n\nMONROVIA PEDIATRIC TRIAGE\n\nMONROVIA HEALTH\nOPD Triage Record | Pediatric (under 5) Synthetic record - not for clinical use\n\nDATE: 01/10/2024 TIME: 15:14 Mam (Pm\n\nNAME: Patient_006 AGE: 23 months sex: Rim CF\n\nOPDCASE: [INO [YES REFERRAL: [INO [X]YES,FROM: _Phebe Hospital\n\nPRESENTING COMPLAINT: cough and difficulty breathing\n\nEMERGENCY SIGNS RED\n(NOT BREATHING\n(CI cENTRAL CYANOSIS IMMEDIATELY\n\n(CD SEVERE RESPIRATORY DISTRESS TRANSFER TO THE\nRESUSCITATION AREA\n\n(coma (aveu = P or U)\na peneeooheay TREAT IMMEDIATELY\n\nCO severe BURNS WEIGH IF POSSIBLE\n(DI contaaious DISEASES -> ISOLATE\n\nVITAL SIGNS RR: 40 HR: 83 Sat: 91 T: 36.2\nWEIGHT (kg): 3.7 MUAC (mm): 126\nw If\n(5 || PRIORITY SIGNS YELLOW\n<x CI TINY BABY (<2 months)\nx (] TEMPERATURE <36C OR >39C PLACE IN PRIORITY IN\n- (C] TRAUMA/SURG EMERGENCY (non-severe) THE QUEUE\n(J POISONING (snake/scorpion bite)\n(PAIN (severe) RE-EVALUATE EVERY\n(] PALLOR (severe) 20mins\nLD RESP DISTRESS (non-severe)\n(C] RESTLESSNESS, IRRITABILITY, LETHARGY MAX. WAIT: thr\n(1 REFERRAL FROM ANOTHER CENTRE\n(BURNS (non-severe)\n\nNON-URGENT GREEN\n[KX] ABSENCE OF EMERGENCY AND PRIORITY SIGNS BACK TO MOH\nREEVALUATE EVERY 60mins\nSAX WAIT\nTRIAGE CLASSIFICATION: [J RED 1 YELLOW GREEN\nTEST AND TREAT\nMalaria ROT: [X] Positive C1 negative ACT (last 3 wks): KX] Yes [No BSL (mg/dL): 105\nHemoglobin (g/dL): 8.6\nTreatment given: (CJ PARACETAMOL 15mg/kg PO (ORAL G10% 10mL/kg PO [KX] ORS 10mLkg/loose stool\nOBSERVATION\nTIME PEWS BSL NURSE\n13:22 3 86 K. Yeaher\n14:55 5 63 K. Yeaher\n17:41 S 66 K, Yeaher\n\nNURSE: SIGNATURE:\n\n",
+    "cer": 0.5803503427265804,
+    "wer": 0.8773584905660378
+  },
+  "6_heavy": {
+    "form_id": 6,
+    "noise": "heavy",
+    "text": "vlan\n\nMONROVIA PEDIATRIC TRIAGE\n\nMONROVIA HEALTH\nOPO Triage Record | Pechatric (under 5)\n\nACT eaten: = Eves = Cte CR mom) 108\n\nDonn 10% tomung 20 Gl ons roncagtecse soe:\n\n",
+    "cer": 0.9162223914699162,
+    "wer": 0.9764150943396226
+  },
+  "7_clean": {
+    "form_id": 7,
+    "noise": "clean",
+    "text": "V1_2024\n\nMONROVIA PEDIATRIC TRIAGE\n\nOPD Triage Record | Pediatric (under 5)\n\nMONROVIA HEALTH\n\nSynthetic record - not for clinical use\n\nDATE: 13/12/2024 TIME: 12:51 Xx] AM PM\nNAME: Patient_007 AGE: 5 months SEX: X]mM F\nOPD CASE: X] NO YES REFERRAL: X] NO YES, FROM:\nPRESENTING COMPLAINT: convulsions\nEMERGENCY SIGNS RED\nNOT BREATHING\nCENTRAL CYANOSIS IMMEDIATELY\nSEVERE RESPIRATORY DISTRESS TRANSFER TO THE\nRESUSCITATION AREA\nCOMA (AVPU = P or U)\nCONVULSIONS TREAT IMMEDIATELY\nSEVERE TRAUMA\nSEVERE BURNS WEIGH IF POSSIBLE\nX] CONTAGIOUS DISEASES -> ISOLATE\nVITAL SIGNS RR: 47 HR: 128 Sat: 90 T: 37.5\nWEIGHT (kg): 9.1 MUAC (mm): 120\nlu\n6 PRIORITY SIGNS YELLOW\n<x TINY BABY (<2 months)\nva TEMPERATURE <36C OR >39C PLACE IN PRIORITY IN\nFe TRAUMA/SURG EMERGENCY (non-severe) THE QUEUE\nPOISONING (snake/scorpion bite)\nPAIN (severe) RE-EVALUATE EVERY\nPALLOR (severe) 20mins\nRESP DISTRESS (non-severe)\nRESTLESSNESS, IRRITABILITY, LETHARGY MAX. WAIT: 1hr\nREFERRAL FROM ANOTHER CENTRE\nBURNS (non-severe)\nNON-URGENT GREEN\nABSENCE OF EMERGENCY AND PRIORITY SIGNS. BACK TO MOH\nREEVALUATE EVERY 60mins\nMAX WAIT: 4 hours\nTRIAGE CLASSIFICATION: [X] RED YELLOW GREEN\nTEST AND TREAT\nMalaria RDT: X] Positive Negative ACT (last 3 wks): Yes X] No BSL (mg/dL): 46\nHemoglobin (g/dL): 13.3\nTreatment given: PARACETAMOL 15mg/kg PO ORAL G10% 10mL/kg PO X] ORS 10mL/kg/loose stool\n\nOBSERVATION\nTIME PEWS BSL NURSE\n14:13 117 K. Yeaher\n07:10 60 K. Yeaher\nNURSE: SIGNATURE:\n\n",
+    "cer": 0.4698142414860681,
+    "wer": 0.784688995215311
+  },
+  "7_moderate": {
+    "form_id": 7,
+    "noise": "moderate",
+    "text": "V1_2024\n\nMONROVIA PEDIATRIC TRIAGE\n\nMONROVIA HEALTH\n\nOPD Triage Record | Pediatric (under 5) Synthetic record - not for clinical use\nDATE: 13/12/2024 TIME: 12:51 lam (lpm\nNAME: Patient_007 AGE: 5 months SEX: Kim (JF\nOPDCASE: [XInoO- [yes REFERRAL: KINO (YES, FRom:\n\nPRESENTING COMPLAINT: convulsions\n\nTRIAGE\n\nEMERGENCY SIGNS RED\n\nIMMEDIATELY\nCsevere RESPIRATORY DISTRESS TRANSFER TO THE\n\nSUSCITATION AREA\n(coma (aveu = P or u) RE TION\nCH convutsions\n\nCl severe seeuua TREAT IMMEDIATELY\nC) severe eurns WEIGH IF POSSIBLE\n[xX] CONTAGIOUS DISEASES -> ISOLATE\n\nVITAL SIGNS RR: 47 HR: 128 Sat: 90 T: 37.5\n\nWEIGHT (kg): 9.1 MUAC (mm): 120\n\n\u2014_S\n\nPRIORITY SIGNS YELLOW\nCty pasy (<2 months)\n\n(D TEMPERATURE <36C OR >39C PLACE IN PRIORITY IN\n(J TRAUMA/SURG EMERGENCY (non-severe) THE QUEUE\n\n(J POISONING (snake/scorpion bite)\n\nRE-EVALUATE EVERY\nC1 PALLOR (severe) 20mins\n\nCJ RESP DISTRESS (non-severe)\n\n(RESTLESSNESS, IRRITABILITY, LETHARGY\n(I REFERRAL FROM ANOTHER CENTRE\n\nC1 Burns (non-severe)\n\nMAX. WAIT: thr\n\nNON-URGENT GREEN\nCl assence oF EMERGENCY AND PRIORITY SIGNS BACK TO MOH\n\nREEVALUATE EVERY 60mins\nMAX WAIT: 4 ours\n\nTRIAGE CLASSIFICATION: RED OO YELLOW CJ GREEN\n\nTEST AND TREAT\nMalaria ROT: [X] Positive Ci negative ACT (last 3 wks): Olyes I No BSL (mg/dl): 46\nHemoglobin (g/dL): 13.3\n\nTreatment given: CI PARACETAMOL 15mg/kg PO Doral 610% 10mUkg PO EX] ORS 1omuKgioose stoo!\n\nOBSERVATION\n\nTIME PEWS BSL NURSE\n14:13 3 117 K. Yeaher\n07:10 3 60 K. Yeaher\n\nNURSE: SIGNATURE:\n\n",
+    "cer": 0.5642414860681114,
+    "wer": 0.8229665071770335
+  },
+  "7_heavy": {
+    "form_id": 7,
+    "noise": "heavy",
+    "text": "viz\n\nMONROVIA PEDIATRIC TRIAGE\n\nOPO Trage Record | Peckatre (er 5)\n\nHemogiomn it) = 19.)\nTreatment ger \u2014-L) PARACETAMOL. timgtg PO\n\nacteansers: Ove Em\n\nConn G10 10mg FO\n\naeons 4\n\nx ores tent ngteese es\n\n",
+    "cer": 0.9040247678018576,
+    "wer": 0.9760765550239234
+  },
+  "8_clean": {
+    "form_id": 8,
+    "noise": "clean",
+    "text": "V1_2024\n\nMONROVIA PEDIATRIC TRIAGE\n\nMONROVIA HEALTH\n\nOPD Triage Record | Pediatric (under 5) Synthetic record - not for clinical use\nDATE: 09/08/2024 TIME: 11:27 AM X] PM\nNAME: Patient_008 AGE: 26 months SEX: X]mM F\nOPD CASE: NO X] YES REFERRAL: X] NO YES, FROM:\n\nPRESENTING COMPLAINT: convulsions\n\nEMERGENCY SIGNS\n\nNOT BREATHING\n\nCENTRAL CYANOSIS\n\nSEVERE RESPIRATORY DISTRESS\n\nCOMA (AVPU = P or U)\nCONVULSIONS\n\nSEVERE TRAUMA\n\nSEVERE BURNS\n\nCONTAGIOUS DISEASES -> ISOLATE\n\nRED\n\nIMMEDIATELY\nTRANSFER TO THE\nRESUSCITATION AREA\nTREAT IMMEDIATELY\n\nWEIGH IF POSSIBLE\n\nVITAL SIGNS RR: 26 HR: 83\n\nSat: 97 T: 38.6\n\nWEIGHT (kg): 4.3\n\nMUAC (mm): 125\n\nTRIAGE\n\nPRIORITY SIGNS\n\nX| TINY BABY (<2 months)\n\nTEMPERATURE <36C OR >39C\nTRAUMA/SURG EMERGENCY (non-severe)\nPOISONING (snake/scorpion bite)\n\nPAIN (severe)\n\nYELLOW\n\nPLACE IN PRIORITY IN\nTHE QUEUE\n\nRE-EVALUATE EVERY\n\nPALLOR (severe) 20mins\nRESP DISTRESS (non-severe)\nRESTLESSNESS, IRRITABILITY, LETHARGY MAX. WAIT: thr\nREFERRAL FROM ANOTHER CENTRE\nBURNS (non-severe)\n\nNON-URGENT GREEN\nABSENCE OF EMERGENCY AND PRIORITY SIGNS BACK TO MOH\n\nREEVALUATE EVERY 60mins\n\nMAX WAIT: 4 hours\n\nTRIAGE CLASSIFICATION: RED X] YELLOW GREEN\nTEST AND TREAT\nMalaria RDT: Positive X] Negative ACT (last 3 wks): X] Yes No BSL (mg/dL): 110\nHemoglobin (g/dL): 7.5\nTreatment given: X] PARACETAMOL 15mg/kg PO ORAL G10% 10mL/kg PO ORS 10mL/kg/loose stool\nOBSERVATION\nTIME PEWS BSL NURSE\n13:07 4 75 K. Yeaher\nNURSE: SIGNATURE:\n\n",
+    "cer": 0.41312741312741313,
+    "wer": 0.6842105263157895
+  },
+  "8_moderate": {
+    "form_id": 8,
+    "noise": "moderate",
+    "text": "V1_2024\n\nMONROVIA PEDIATRIC TRIAGE\n\nOPD Triage Record | Pediatric (under 5)\n\nMONROVIA HEALTH\nSynthetic record - not for clinical use\n\nDATE: 09/08/2024 TIME: 11:27 (Cam Xlpm\nNAME: Patient_008 AGE: 26 months sex: Kim (CF\nOPDCASE: [JNO [yes REFERRAL:  [X]NO_ [] YES, FROM:\n\nPRESENTING COMPLAINT: convulsions\n\nTRIAGE\n\nEMERGENCY SIGNS\nCINoT BREATHING\nCI ceNTRAL CYANOSIS\n(CO SeveRE RESPIRATORY DISTRESS\n\n(coma (AvPu =P or U)\n\nCI convutsions\n\n(CO severe TRAUMA\n\nCO severe BURNS\n\nLI CONTAGIOUS DISEASES -> ISOLATE\n\nRED\n\nIMMEDIATELY\nTRANSFER TO THE\nRESUSCITATION AREA\n\nTREAT IMMEDIATELY\n\nWEIGH IF POSSIBLE\n\nVITAL SIGNS RR: 26 HR: 83 Sat: 97 T: 38.6\n\nWEIGHT (kg): 4.3 MUAC (mm): 125\n\nPRIORITY SIGNS YELLOW\n[X] TINY BABY (<2 months)\n(L) TEMPERATURE <36C OR >39C PLACE IN PRIORITY IN\n(] TRAUMA/SURG EMERGENCY (non-severe) THE QUEUE\n\nLJ POISONING (snake/scorpion bite)\n\nC PAIN (severe)\n\nLJ PALLOR (severe)\n\n) RESP DISTRESS (non-severe)\n\n(J RESTLESSNESS, IRRITABILITY, LETHARGY\n(J REFERRAL FROM ANOTHER CENTRE\n\n(J BURNS (non-severe)\n\nRE-EVALUATE EVERY\n20mins\n\nMAX. WAIT: thr\n\nNON-URGENT GREEN\n(ABSENCE OF EMERGENCY AND PRIORITY SIGNS BACK TO MOH\nREEVALUATE EVERY 60mins\nAX WAIT\nTRIAGE CLASSIFICATION: [)RED YELLOW (J GREEN\nTEST AND TREAT\nMalaria ROT: CO Positive [X] Negative ACT (last 3 wks): IX] Yes CNo BSL (mg/dl): 110\n\nHemoglobin (g/dL): 75\n\nTreatment given: [KX] PARACETAMOL 15mg/kg PO\n\nCORAL G10% 10mL/kg PO (ors 10mLkgiloose stool\n\nOBSERVATION\nTIME PEWS BSL NURSE\n13:07 a 75 K. Yeaher\nNURSE: SIGNATURE:\n\n",
+    "cer": 0.4254826254826255,
+    "wer": 0.7655502392344498
+  },
+  "8_heavy": {
+    "form_id": 8,
+    "noise": "heavy",
+    "text": "PEDIATRIC TRIAGE ssonmonn vee\n\n@ Trage Record | Peckatre (under 5) Syreete record not tr Circe ee\n\nwawerot =) Pose Ol negate ACToat3ees: lve Chrno ee,\nMemogomn gm) 75\nTreatment given (EE) PARACETAMOX timgitg PO Conn Gren 1omcag PO CF ORS tom ngtoose soot\n\n",
+    "cer": 0.8888030888030888,
+    "wer": 0.9712918660287081
+  },
+  "9_clean": {
+    "form_id": 9,
+    "noise": "clean",
+    "text": "V1_2024\n\nMONROVIA PEDIATRIC TRIAGE\n\nOPD Triage Record | Pediatric (under 5)\n\nMONROVIA HEALTH\n\nSynthetic record - not for clinical use\n\nDATE: 20/01/2024 TIME:\n\n16:05 AM [X]PM\n\nNAME: Patient_009\n\nOPD CASE:\n\nNO Xx] YES\n\nREFERRAL: X] NO\n\nAGE: 39 months\n\nYES, FROM:\n\nPRESENTING COMPLAINT: severe abdominal pain\n\nSEX: M Xx] F\n\nEMERGENCY SIGNS\n\nNOT BREATHING\n\nCENTRAL CYANOSIS\n\nSEVERE RESPIRATORY DISTRESS\n\nCOMA (AVPU = P or U)\nCONVULSIONS\n\nX] SEVERE TRAUMA\n\nX] SEVERE BURNS\n\nCONTAGIOUS DISEASES -> ISOLATE\n\nRED\n\nIMMEDIATELY\nTRANSFER TO THE\nRESUSCITATION AREA\nTREAT IMMEDIATELY\n\nWEIGH IF POSSIBLE\n\nVITAL SIGNS RR: 30 HR: 95\n\nSat: 92 T: 37.4\n\nWEIGHT (kg): 17.8\n\nMUAC (mm): 124\n\nTRIAGE\n\nPRIORITY SIGNS\n\nTINY BABY (<2 months)\n\nTEMPERATURE <36C OR >39C\nTRAUMA/SURG EMERGENCY (non-severe)\nPOISONING (snake/scorpion bite)\n\nPAIN (severe)\n\nPALLOR (severe)\n\nRESP DISTRESS (non-severe)\nRESTLESSNESS, IRRITABILITY, LETHARGY\nREFERRAL FROM ANOTHER CENTRE\nBURNS (non-severe)\n\nYELLOW\n\nPLACE IN PRIORITY IN\nTHE QUEUE\n\nRE-EVALUATE EVERY\n20mins\n\nMAX. WAIT: 1hr\n\nNON-URGENT\n\nABSENCE OF EMERGENCY AND PRIORITY SIGNS\n\nGREEN\nBACK TO MOH\n\nREEVALUATE EVERY 60mins\n\nTRIAGE CLASSIFICATION: [X] RED\n\nYELLOW\n\nMAX WAIT: 4 hours\n\nGREEN\n\nTEST AND TREAT\n\nMalaria RDT:\n\nPositive X]} Negative\n\nHemoglobin (g/dL): 7.5\n\nTreatment given: X] PARACETAMOL 15mg/kg PO\n\nACT (last 3 wks): Yes IX} No\n\nORAL G10% 10mL/kg PO\n\nBSL (mg/dL): 57\n\nORS 10mL/kg/loose stool\n\nOBSERVATION\nTIME PEWS\n\nBSL NURSE\n\n10:23 2\n\n70 K. Yeaher\n\nNURSE:\n\nSIGNATURE:\n\n",
+    "cer": 0.4006139677666922,
+    "wer": 0.6729857819905213
+  },
+  "9_moderate": {
+    "form_id": 9,
+    "noise": "moderate",
+    "text": "V1_2024\n\nMONROVIA PEDIATRIC TRIAGE\n\nOPD Triage Record | Pediatric (under 5)\n\nMONROVIA HEALTH\nSynthetic record - not for clinical use\n\nDATE: 20/01/2024 TIME: 16:05 Oam lpm\nNAME: Patient_009 AGE: 39 months\nOPDCASE: [JNO [Xlyes REFERRAL:  [X]NO_ [1] YES, FROM:\n\nPRESENTING COMPLAINT: severe abdominal pain\n\nSEX: Dm IF\n\nTRIAGE\n\nEMERGENCY SIGNS\n\n(CINOT BREATHING\n\nC1 ceNTRAL CYANOSIS\n\n( SEVERE RESPIRATORY DISTRESS\n\n(coma (avPu =P or U)\nOO convutsions\n\nEX) SEVERE TRAUMA\n[X] SEVERE BURNS\nCO contaaious DISEASES -> ISOLATE\n\nRED\nIMMEDIATELY\nTRANSFER TO THE\nRESUSCITATION AREA\nTREAT IMMEDIATELY\n\nWEIGH IF POSSIBLE\n\nVITAL SIGNS RR: 30\n\nCJ PAIN (severe)\n\n(-] PALLOR (severe)\n\n(] RESP DISTRESS (non-severe)\n\n([] RESTLESSNESS, IRRITABILITY, LETHARGY\n(] REFERRAL FROM ANOTHER CENTRE\n\nO BURNS (non-severe)\n\nHR: 95 Sat: 92 T: 37.4\nWEIGHT (kg): 17.8 MUAC (mm): 124\nPRIORITY SIGNS | YELLOW\n(C1) Tiny BaBy (<2 months)\n(] TEMPERATURE <36C OR >39C PLACE IN PRIORITY IN\n([] TRAUMA/SURG EMERGENCY (non-severe) THE QUEUE\nCL] POISONING (snake/scorpion bite)\n\nRE-EVALUATE EVERY\n20mins\n\nMAX. WAIT: thr\n\nNON-URGENT GREEN\nCIABSENCE OF EMERGENCY AND PRIORITY SIGNS BACK TO MOH\nREEVALUATE EVERY 60mins\nAX WAIT:\nTRIAGE CLASSIFICATION: RED (YELLOW (J GREEN\nTEST AND TREAT\nMalaria RDT: CO Positive [X] Negative ACT (last 3 wks): O ves [X] No BSL (mg/dL): 57\nHemoglobin (g/dL): 75\nTreatment given: [X] PARACETAMOL 15mg/kg PO CJ ORAL G10% 10mLkg PO (1 ors 1omLkg/oose stool\nOBSERVATION\nTIME PEWS BSL NURSE\n10:23 2 70 K. Yeaher\nNURSE:\n\nSIGNATURE:\n\n",
+    "cer": 0.5548733691481197,
+    "wer": 0.8151658767772512
+  },
+  "9_heavy": {
+    "form_id": 9,
+    "noise": "heavy",
+    "text": "vi_ 20m\n\nMONROVIA PEDIATRIC TRIAGE\n\nOPO Trage Record | Pechatrc (under 5)\n\nMONROVIA HEALTH\nSyr@ete record not tor chrecat use\n",
+    "cer": 0.9270913277052955,
+    "wer": 0.9715639810426541
+  }
+}

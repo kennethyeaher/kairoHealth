@@ -18,8 +18,8 @@ from PIL import Image, ImageDraw, ImageEnhance, ImageFilter
 from config import IMAGE_DIR, N_FORMS, NOISE_LEVELS, PDF_DIR, RANDOM_SEED
 
 
-# Tunable noise parameters
-# If after running run_ocr.py the CER for a tier is too low or too high, adjust the values here. Targets we want to hit empirically:
+# tunable noise parameters
+# if after running run_ocr.py the CER for a tier is too low or too high, adjust the values here. Targets we want to hit empirically:
 #   clean    CER ~ 0.01 - 0.05
 #   moderate CER ~ 0.10 - 0.20
 #   heavy    CER ~ 0.20 - 0.40
@@ -47,12 +47,12 @@ NOISE_CONFIGS = {
         contrast_mult=1.0, n_smudges=0, blue_shift=0,
     ),
     "moderate": NoiseConfig(
-        rotation_range=1.5, blur_radius=1.0,
+        rotation_range=0.5, blur_radius=0.5,
         contrast_mult=0.85, n_smudges=0, blue_shift=0,
     ),
     "heavy": NoiseConfig(
-        rotation_range=3.0, blur_radius=2.2,
-        contrast_mult=0.65, n_smudges=8, blue_shift=25,
+        rotation_range=1.5, blur_radius=1.0,
+        contrast_mult=0.70, n_smudges=0, blue_shift=10,
     ),
 }
 
@@ -61,10 +61,7 @@ PDF_DPI = 200                          # higher = sharper but slower
 SMUDGE_RADIUS_RANGE = (15, 40)         # px
 
 
-# Degradation pipeline
-# Each step is a small pure function that takes (img, config) and
-# returns a degraded img. The pipeline applies them in order.
-# A no-op step (e.g. blur with radius 0) is allowed and silently skipped.
+# degradation pipeline
 
 def apply_rotation(img, cfg):
     """Random rotation within +/- cfg.rotation_range degrees."""
@@ -111,7 +108,7 @@ def apply_blue_shift(img, cfg):
     return Image.fromarray(arr.astype(np.uint8))
 
 
-# Order matters: rotate before blur (so blur softens rotation edges),
+# order matters: rotate before blur (so blur softens rotation edges),
 # blur before contrast (so contrast loss compounds), smudges and tint
 # applied last on top of the degraded base.
 DEGRADATION_PIPELINE = [

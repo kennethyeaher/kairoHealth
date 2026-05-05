@@ -14,7 +14,7 @@ OCR_RESULTS_PATH = DATA_DIR / "ocr_results.json"
 # Experiment parameters
 # N_FORMS = 10 during pipeline development (30 OCR docs across 3 noise tiers)
 # N_FORMS = 30 for the final paper run (90 OCR docs total, matching proposal)
-N_FORMS = 10
+N_FORMS = 30
 NOISE_LEVELS = ["clean", "moderate", "heavy"]
 RANDOM_SEED = 42
 

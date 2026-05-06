@@ -11,7 +11,7 @@
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-1.6-F7931E?style=flat&logo=scikit-learn&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Complete-brightgreen?style=flat)
 
-**University of Maryland, College of Information - INST664: Applied NLP - Final Project**
+**University of Maryland, College of Information - INST664: Transforming Unstructured Content with AI - Final Project**
 
 [Headline Findings](#headline-findings) · [Pipeline Stages](#pipeline-stages) · [Data and Sources](#data-and-sources) · [Future Work](#next-steps-and-future-considerations)
  

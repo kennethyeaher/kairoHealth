@@ -1,0 +1,6 @@
+llm_only_correct,rules_only_correct,n_disagree,p_value,noise,significant_at_05
+26,18,44,0.2912152365458951,clean,False
+29,18,47,0.14386508844054896,moderate,False
+55,1,56,1.582067810090848e-15,heavy,True
+54,4,58,3.169950413273171e-12,severe,True
+5,0,5,0.0625,extreme,False

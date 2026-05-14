@@ -1,0 +1,15 @@
+field,rules_errors,llm_errors,recommended_method
+age,39,35,llm
+ampm,72,63,llm
+date,35,34,llm
+hr,50,50,either
+muac,42,39,llm
+name,38,38,either
+presenting_complaint,59,55,llm
+rr,59,47,llm
+sat,47,47,either
+sex,90,59,llm
+temperature,52,51,llm
+time,36,35,llm
+triage_color,89,50,llm
+weight,53,49,llm

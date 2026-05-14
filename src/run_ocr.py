@@ -110,8 +110,22 @@ def ocr_image(image_path):
     return pytesseract.image_to_string(preprocess_for_ocr(img))
 
 
-# entry point
+def sorted_cer(reference: str, hypothesis: str) -> float:
+    """
+    Compute CER after token sorting both strings.
 
+    Tesseract's reading order does not always match the source layout, which
+    can inflate raw CER even when the OCR text is visually clean. Sorting both
+    strings by whitespace separated tokens removes the reading order penalty and
+    focuses the score on character recognition quality.
+    """
+    ref_sorted = " ".join(sorted(reference.split()))
+    hyp_sorted = " ".join(sorted(hypothesis.split()))
+
+    return cer(ref_sorted, hyp_sorted)
+
+
+# entry point
 def main():
     """OCR every image and write results + calibration summary."""
     with open(GROUND_TRUTH_PATH) as f:
@@ -131,6 +145,7 @@ def main():
             # CER and WER measure how far OCR output is from the
             # intended readable text, this calibrates the noise tier, not the downstream extractors.
             char_err = cer(source_text, extracted_text)
+            char_err_sorted = sorted_cer(source_text, extracted_text)
             word_err = wer(source_text, extracted_text)
 
             ocr_results[f"{form_id}_{level}"] = {
@@ -138,12 +153,14 @@ def main():
                 "noise": level,
                 "text": extracted_text,
                 "cer": char_err,
+                "cer_sorted": char_err_sorted,
                 "wer": word_err,
             }
             error_rate_rows.append({
                 "form_id": form_id,
                 "noise": level,
                 "cer": char_err,
+                "cer_sorted": char_err_sorted,
                 "wer": word_err,
             })
 
@@ -153,7 +170,7 @@ def main():
 
     # calibration summary: mean CER/WER per tier
     df = pd.DataFrame(error_rate_rows)
-    summary = df.groupby("noise")[["cer", "wer"]].mean().round(3)
+    summary = df.groupby("noise")[["cer", "cer_sorted", "wer"]].mean().round(3)
     summary = summary.reindex(NOISE_LEVELS)
     summary.to_csv(RESULTS_DIR / "ocr_calibration.csv")
 

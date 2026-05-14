@@ -1,4 +1,6 @@
-noise,cer,wer
-clean,0.486,0.743
-moderate,0.48,0.743
-heavy,0.584,0.834
+noise,cer,cer_sorted,wer
+clean,0.486,0.317,0.743
+moderate,0.468,0.316,0.733
+heavy,0.588,0.477,0.84
+severe,0.836,0.803,0.94
+extreme,0.949,0.944,0.989

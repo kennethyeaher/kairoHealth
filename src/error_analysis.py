@@ -60,7 +60,7 @@ FIELD_LABEL_KEYWORDS = {
 }
 
 OCR_RESULTS_PATH = Path(__file__).resolve().parent.parent / "data" / "ocr_results.json"
-TARGET_NOISE = "heavy"
+TARGET_NOISES = ("heavy", "severe", "extreme")
 
 
 def categorize_failure(prediction, gold, ocr_text: str, field: str) -> str | None:
@@ -103,7 +103,7 @@ def analyze_failures(predictions_path: Path) -> pd.DataFrame:
     rows = []
 
     for doc_id, pred_fields in pred_data.items():
-        if not doc_id.endswith(f"_{TARGET_NOISE}"):
+        if not any(doc_id.endswith(f"_{t}") for t in TARGET_NOISES):
             continue
 
         form_id = doc_id.rsplit("_", 1)[0]
@@ -119,10 +119,12 @@ def analyze_failures(predictions_path: Path) -> pd.DataFrame:
             )
 
             if category is not None:
+                tier = doc_id.rsplit("_", 1)[1]
                 rows.append({
                     "method": method,
                     "field": field,
                     "category": category,
+                    "noise": tier,
                 })
 
     df = pd.DataFrame(rows)
@@ -131,10 +133,10 @@ def analyze_failures(predictions_path: Path) -> pd.DataFrame:
         return df
 
     return (
-        df.groupby(["method", "field", "category"])
+        df.groupby(["method", "noise", "field", "category"])
         .size()
         .reset_index(name="count")
-        .sort_values(["method", "field", "category"])
+        .sort_values(["method", "noise", "field", "category"])
     )
 
 

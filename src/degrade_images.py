@@ -23,6 +23,8 @@ from config import IMAGE_DIR, N_FORMS, NOISE_LEVELS, PDF_DIR, RANDOM_SEED
 #   clean    CER ~ 0.01 - 0.05
 #   moderate CER ~ 0.10 - 0.20
 #   heavy    CER ~ 0.20 - 0.40
+#   severe   CER ~ 0.40 - 0.65
+#   extreme  CER ~ 0.65 - 0.90
 
 @dataclass
 class NoiseConfig:
@@ -53,6 +55,14 @@ NOISE_CONFIGS = {
     "heavy": NoiseConfig(
         rotation_range=1.5, blur_radius=1.0,
         contrast_mult=0.70, n_smudges=0, blue_shift=10,
+    ),
+        "severe": NoiseConfig(
+        rotation_range=3.0, blur_radius=1.5,
+        contrast_mult=0.55, n_smudges=3, blue_shift=20,
+    ),
+    "extreme": NoiseConfig(
+        rotation_range=5.0, blur_radius=2.5,
+        contrast_mult=0.40, n_smudges=8, blue_shift=30,
     ),
 }
 

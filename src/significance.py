@@ -40,7 +40,7 @@ PREDICTION_PATHS = {
 RESULTS_DIR = REPO_ROOT / "results"
 
 # add a new tier here if the experiment gets expanded
-NOISE_TIERS = ("clean", "moderate", "heavy")
+NOISE_TIERS = ("clean", "moderate", "heavy", "severe", "extreme")
 
 N_BOOTSTRAP_ITERATIONS = 1000
 RANDOM_SEED = 42

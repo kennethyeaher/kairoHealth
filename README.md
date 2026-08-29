@@ -29,7 +29,7 @@ The evaluation reports precision, recall, and F1 at the field level and across n
 
 > **Core question:** As OCR input quality degrades across a controlled five tier noise spectrum, does LLM based field extraction stay more reliable than a rule based baseline, and where does each method break?
 
-The headline finding is that the methods are statistically indistinguishable on clean and moderate inputs. The LLM shows a significant and growing advantage through heavy and severe noise. At extreme noise, both methods fail because OCR quality makes the document almost unreadable. The LLM also shows strong grounding behavior overall: across 2,100 field extraction attempts, only 4 hallucinations were observed, all at the two most degraded tiers.
+The headline finding is that the methods are statistically indistinguishable on clean and moderate inputs. The LLM shows a significant and growing advantage through heavy and severe noise. At extreme noise both methods fail because OCR quality makes the document almost unreadable, and the LLM's advantage there is not statistically significant. The LLM also shows strong grounding behavior overall: across 2,100 field extraction attempts, only 4 hallucinations were observed, all at the two most degraded tiers.
 
 ---
 
@@ -43,7 +43,7 @@ The headline finding is that the methods are statistically indistinguishable on 
 | Severe | 0.80 | 0.58 | 0.67 | 0.42 | 0.54 |
 | Extreme | 0.94 | 0.00 | 0.02 | 0.00 | 0.01 |
 
-The recall column tells the clearest version of the story. From clean to heavy noise, LLM recall drops by only 1 point, from 0.91 to 0.90, while rules recall drops by 13 points, from 0.90 to 0.77. At severe noise, the gap widens: rules recall falls to 0.42 while LLM recall holds at 0.54. At extreme noise, both methods fail, but the rules method produces nothing at all while the LLM correctly refuses extraction on 99% of fields.
+The recall column tells the clearest version of the story. From clean to heavy noise, LLM recall drops by only 1 point, from 0.91 to 0.90, while rules recall drops by 13 points, from 0.90 to 0.77. At severe noise, the gap widens: rules recall falls to 0.42 while LLM recall holds at 0.54. At extreme noise both methods fail. The ground truth has a value in every field, so the LLM returning null for 410 of 420 fields is 410 misses rather than 410 correct refusals, which is exactly why its recall there is 0.01. What the behavior does show is that the model goes quiet instead of inventing values from medical priors. The rules method returned a value on only 2 of 420 fields and both were wrong.
 
 > **Note on CER:** Sorted CER measures character recognition quality after token sorting both the OCR output and reference text. This removes reading order penalties caused by Tesseract's column traversal. Raw CER is also computed and stored in `data/ocr_results.json`, but sorted CER is the cleaner metric for this analysis.
 
@@ -63,7 +63,7 @@ Bootstrap confidence intervals with 1,000 paired resamples and McNemar exact tes
 
 The methods are statistically indistinguishable on clean and moderate inputs. The LLM advantage becomes significant at heavy and severe noise, with the largest gap at severe noise. At extreme noise, both methods are essentially broken, so the advantage disappears.
 
-McNemar field level testing at heavy noise produced p = 7.4e-14, with 60 fields correct under LLM only versus 4 fields correct under rules only among the 64 disagreements. In other words, when these two methods see the same heavy noise input and disagree, the LLM is right 15 times out of 16.
+McNemar field level testing at heavy noise produced p = 1.6e-15, with 55 fields correct under LLM only versus 1 field correct under rules only among the 56 disagreements. In other words, when these two methods see the same heavy noise input and disagree, the LLM is right 55 times out of 56. The severe tier shows the same pattern at 54 versus 4 among 58 disagreements, p = 3.2e-12.
 
 See `results/bootstrap_ci.csv`, `results/bootstrap_diff.csv`, and `results/mcnemar.csv`.
 
@@ -71,7 +71,7 @@ See `results/bootstrap_ci.csv`, `results/bootstrap_diff.csv`, and `results/mcnem
 
 ## Deployment Guide
 
-Error analysis at heavy, severe, and extreme noise categorizes each failure as missing, substitution, hallucination, or layout artifact.
+Error analysis at heavy, severe, and extreme noise categorizes each failure as missing, substitution, hallucination, or layout artifact. The table below reports the heavy tier on its own, because that is the tier where the two methods separate while both are still usable. Note that `results/deployment_guide.csv` currently pools all three degraded tiers, so its totals are larger than the heavy only counts shown here.
 
 | Category | Meaning |
 |---|---|
@@ -86,22 +86,26 @@ Error analysis at heavy, severe, and extreme noise categorizes each failure as m
 |---|---:|---:|---|
 | date | 0 | 0 | either |
 | name | 0 | 0 | either |
-| hr | 3 | 3 | either |
-| muac | 2 | 2 | either |
-| sat | 1 | 1 | either |
-| weight | 1 | 1 | either |
-| age | 3 | 0 | llm |
-| ampm | 21 | 14 | llm |
-| presenting_complaint | 2 | 0 | llm |
-| rr | 2 | 0 | llm |
-| time | 2 | 0 | llm |
-| sex | 30 | 17 | llm |
-| temperature | 7 | 5 | llm |
-| triage_color | 30 | 5 | llm |
+| sat | 0 | 0 | either |
+| muac | 0 | 0 | either |
+| hr | 1 | 1 | either |
+| temperature | 3 | 3 | either |
+| age | 1 | 0 | llm |
+| rr | 1 | 0 | llm |
+| time | 1 | 0 | llm |
+| presenting_complaint | 1 | 0 | llm |
+| weight | 4 | 3 | llm |
+| ampm | 25 | 17 | llm |
+| sex | 30 | 13 | llm |
+| triage_color | 29 | 5 | llm |
 
-The LLM matches or beats the rules baseline on every field at heavy noise. The practical recommendation is to use regex only on fields where both methods reach zero errors because those fields are cheaper and deterministic. All other fields should route through the LLM.
+The LLM matches or beats the rules baseline on every field at heavy noise. The practical recommendation is to use regex on the six fields where the two methods tie, because those are deterministic, auditable, and work with no network connection, and to route the other eight through the LLM.
 
-**Safety caveat:** Of the LLM's 5 errors on `triage_color` at heavy noise, 4 were over triage, meaning GREEN was predicted as YELLOW, which is the safer direction. One was under triage, meaning RED was predicted as YELLOW. The rules method produced 30 missing values on the same field, which silently propagates as null triage data downstream. Both failure modes argue for human review of triage classifications in any real deployment.
+Routing this way scores F1 0.906 at heavy noise, identical to sending every field to the model. It is worth being precise about what that does and does not save. The API call is per document rather than per field, so one call already returns all fourteen values and moving six of them to regex saves output tokens and little else. The gain is that six fields become deterministic and keep working offline, not that the pipeline gets meaningfully cheaper. The split is also tuned at heavy noise and should not be applied to clean input, where the pure regex baseline scores higher than either alternative at F1 0.927.
+
+**Safety caveat:** The LLM classified 25 of 30 forms correctly at heavy noise. Of its 5 errors on `triage_color`, 3 were over triage, meaning GREEN was predicted as YELLOW, which is the safer direction. The other 2 were under triage, meaning RED was predicted as YELLOW. The rules method returned nothing on this field for 29 of 30 forms, which silently propagates as null triage data downstream.
+
+Severe noise is worse and the pattern is different. The LLM classified 12 of 30 correctly, left 13 forms unclassified including 4 marked RED by the clinician, and produced one RED to GREEN error. Both failure modes argue against autonomous triage classification at any noise level. See `results/triage_safety_matrix.png` in `docs/assets`.
 
 ### Hallucination Profile Across All Tiers
 
@@ -114,7 +118,7 @@ The LLM matches or beats the rules baseline on every field at heavy noise. The p
 | Extreme | 2 | 420 |
 | **Total** | **4** | **2,100** |
 
-There were zero hallucinations below severe OCR quality. At extreme noise, the LLM mostly refuses to extract rather than guessing from medical priors.
+There were zero hallucinations below severe OCR quality. At extreme noise the LLM returns null for almost every field rather than guessing from medical priors. Those nulls are scored as misses, not as correct abstentions, because every field in the ground truth has a value.
 
 See `results/error_categories.csv` and `results/deployment_guide.csv`.
 
@@ -255,6 +259,7 @@ python -m src.error_analysis    # failure categorization and deployment guide
 | File | `evaluate.py` | Precision, recall, F1, tables, and figures |
 | File | `significance.py` | Bootstrap confidence intervals and McNemar exact tests |
 | File | `error_analysis.py` | Failure categorization and deployment guide |
+| File | `make_figures.py` | Builds the case study figures from `results/` |
 | **Folder** | **`data/`** | **Pipeline data artifacts** |
 | File | `ground_truth.json` | Field values for all 30 forms |
 | File | `ocr_results.json` | Raw Tesseract output with CER per tier |
@@ -275,6 +280,12 @@ python -m src.error_analysis    # failure categorization and deployment guide
 | File | `recall_by_noise.png` | Recall bar chart |
 | File | `rules_field_heatmap.png` | Per field F1 heatmap for regex |
 | File | `llm_field_heatmap.png` | Per field F1 heatmap for LLM |
+| **Folder** | **`docs/assets/`** | **Figures for the written case study** |
+| File | `recall_by_noise.png` | Recall per method per tier with significance marked |
+| File | `triage_safety_matrix.png` | Triage confusion at heavy and severe noise |
+| File | `field_errors_heavy.png` | Per field errors at heavy noise, both methods |
+| File | `noise_ladder.png` | One form header rendered at all five tiers |
+| File | `pipeline.svg` | Pipeline diagram |
 | File | `config.py` | Paths, seeds, field schema, and noise configs |
 | File | `requirements.txt` | Pinned dependencies |
 | File | `.env.example` | Template for API key configuration |
@@ -425,9 +436,13 @@ All randomness is seeded through `RANDOM_SEED = 42` in `config.py`.
 
 This is a synthetic data study on printed forms. Results should be read as an upper bound on extraction quality achievable with clean printed templates. Field performance on real handwritten triage records would almost certainly be lower for both methods.
 
-The single under triage error, where RED was predicted as YELLOW by the LLM at heavy noise on `triage_color`, is a real safety concern and the clearest argument for mandatory human review of triage classifications. The rules method's 30 missing values on the same field are not safer because a null triage color silently propagates as default routing. Both failure modes argue against autonomous triage decisions from either method.
+The two under triage errors at heavy noise, where RED was predicted as YELLOW by the LLM on `triage_color`, are a real safety concern and the clearest argument for mandatory human review of triage classifications. Severe noise adds a RED to GREEN error and four RED forms left unclassified. The rules method is not the safer alternative: its 29 missing values on the same field at heavy noise propagate silently as default routing. Both failure modes argue against autonomous triage decisions from either method.
 
 At extreme noise, where sorted CER is 0.94, both methods fail. The 4 LLM hallucinations observed in the full study are concentrated here. The near zero hallucination rate below extreme noise is a property of this specific prompt and noise range, not a guaranteed property of LLM extractors in general.
+
+Two measurement caveats apply to the noise ladder itself. Clean and moderate score 0.317 and 0.316 sorted CER, which is close enough to treat as one condition, so the study reports five tiers but delivers four distinct ones. And a clean 200 DPI render of machine printed text should OCR near 0.02, not 0.32. The inflation comes from `reconstruct_source_text` in `run_ocr.py`, which compares OCR output against a hand typed reconstruction of the form labels, so every transcription mismatch is charged to Tesseract. The ordering across tiers is meaningful; the absolute values are not.
+
+The LLM stage is also not reproducible as written. `extract_llm.py` does not set `temperature` and does not cache responses, so the exact numbers here cannot be re derived without another paid run.
 
 ---
 
@@ -439,6 +454,9 @@ At extreme noise, where sorted CER is 0.94, both methods fail. The 4 LLM halluci
 | Few shot LLM variant | Add 2 in context examples to the LLM prompt | Quantify the few shot improvement over zero shot |
 | Handwriting OCR | Swap Tesseract for a handwriting capable OCR model such as TrOCR or Google Document AI | Address the largest gap between synthetic and real conditions |
 | Vitals cross validation | Flag triage color predictions that contradict extracted vitals | Catch under triage errors without human review of every form |
+| Reference text from source | Derive the CER reference from the same draw calls that render the form | Make the OCR quality metric trustworthy in absolute terms |
+| Deterministic LLM stage | Set temperature to 0 and cache every response to disk | Make the full pipeline replayable with no API key |
+| Per tier deployment guide | Parameterize the tier in `error_analysis.py` | Stop pooling three tiers into a table labeled heavy noise |
 
 ---
 

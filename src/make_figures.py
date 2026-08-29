@@ -506,25 +506,48 @@ def plot_field_errors(rules_errors, llm_errors, form_count):
     return save_figure(figure, "field_errors_heavy.png")
 
 
+# Candidate label faces, in preference order. The first entry that loads wins.
+# Linux and macOS keep their system sans in different places, and the labels are
+# unreadable if this falls through to a fixed size bitmap font.
+FONT_CANDIDATES = {
+    False: [
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+        "/System/Library/Fonts/Supplemental/Arial.ttf",
+        "/Library/Fonts/Arial.ttf",
+        "/System/Library/Fonts/Helvetica.ttc",
+    ],
+    True: [
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+        "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
+        "/Library/Fonts/Arial Bold.ttf",
+        "/System/Library/Fonts/Helvetica.ttc",
+    ],
+}
+
+
 def load_ladder_font(size, bold=False):
-    """Return a DejaVu font at the requested size, or the PIL default.
+    """Return a scalable sans face at the requested size.
 
     Parameters
     size
         Point size to load.
     bold
-        Whether to load the bold face.
+        Whether to prefer the bold face.
 
     Returns
     font
-        A PIL font object. Falls back to the bitmap default when DejaVu is not
-        installed, which changes the label size but not the figure content.
+        A PIL font object honoring the requested size. Falls back to Pillow's
+        scalable default only if no system face is found, never to the fixed
+        size bitmap default, which silently ignores the size and renders the
+        tier labels too small to read.
     """
-    face = "DejaVuSans-Bold.ttf" if bold else "DejaVuSans.ttf"
-    try:
-        return ImageFont.truetype(f"/usr/share/fonts/truetype/dejavu/{face}", size)
-    except OSError:
-        return ImageFont.load_default()
+    for path in FONT_CANDIDATES[bold]:
+        try:
+            return ImageFont.truetype(path, size)
+        except OSError:
+            continue
+
+    return ImageFont.load_default(size=size)
 
 
 def build_noise_ladder(calibration_rows):

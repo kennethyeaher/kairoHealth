@@ -85,12 +85,12 @@ clean,weight,1.0,llm
 clean,muac,1.0,llm
 moderate,date,1.0,llm
 moderate,time,1.0,llm
-moderate,ampm,0.5,llm
+moderate,ampm,0.467,llm
 moderate,name,1.0,llm
 moderate,age,1.0,llm
-moderate,sex,0.6,llm
+moderate,sex,0.633,llm
 moderate,presenting_complaint,1.0,llm
-moderate,triage_color,0.7,llm
+moderate,triage_color,0.733,llm
 moderate,rr,1.0,llm
 moderate,hr,1.0,llm
 moderate,sat,1.0,llm
@@ -113,7 +113,7 @@ heavy,weight,0.9,llm
 heavy,muac,1.0,llm
 severe,date,0.909,llm
 severe,time,0.873,llm
-severe,ampm,0.528,llm
+severe,ampm,0.538,llm
 severe,name,0.8,llm
 severe,age,0.893,llm
 severe,sex,0.583,llm
@@ -126,7 +126,7 @@ severe,temperature,0.571,llm
 severe,weight,0.609,llm
 severe,muac,0.824,llm
 extreme,date,0.062,llm
-extreme,time,0.065,llm
+extreme,time,0.062,llm
 extreme,ampm,0.0,llm
 extreme,name,0.0,llm
 extreme,age,0.0,llm

@@ -29,7 +29,7 @@ The evaluation reports precision, recall, and F1 at the field level and across n
 
 > **Core question:** As OCR input quality degrades across a controlled five tier noise spectrum, does LLM based field extraction stay more reliable than a rule based baseline, and where does each method break?
 
-The headline finding is that the methods are statistically indistinguishable on clean and moderate inputs. The LLM shows a significant and growing advantage through heavy and severe noise. At extreme noise both methods fail because OCR quality makes the document almost unreadable, and the LLM's advantage there is not statistically significant. The LLM also shows strong grounding behavior overall: across 2,100 field extraction attempts, only 4 hallucinations were observed, all at the two most degraded tiers.
+The headline finding is that the methods are statistically indistinguishable on clean and moderate inputs. The LLM shows a significant and growing advantage through heavy and severe noise. At extreme noise both methods fail because OCR quality makes the document almost unreadable, and the LLM's advantage there is not statistically significant. The LLM also shows strong grounding behavior overall: across 2,100 field extraction attempts, only 5 hallucinations were observed, all at the two most degraded tiers.
 
 ---
 
@@ -56,10 +56,10 @@ Bootstrap confidence intervals with 1,000 paired resamples and McNemar exact tes
 | Noise | LLM minus Rules F1 | 95% CI | Significant |
 |---|---:|---|---|
 | Clean | -0.013 | [-0.038, +0.010] | No |
-| Moderate | -0.010 | [-0.031, +0.010] | No |
+| Moderate | -0.008 | [-0.029, +0.014] | No |
 | Heavy | +0.042 | [+0.019, +0.066] | **Yes** |
-| Severe | +0.092 | [+0.060, +0.122] | **Yes** |
-| Extreme | +0.024 | [0.000, +0.058] | No |
+| Severe | +0.093 | [+0.061, +0.123] | **Yes** |
+| Extreme | +0.024 | [+0.000, +0.059] | No |
 
 The methods are statistically indistinguishable on clean and moderate inputs. The LLM advantage becomes significant at heavy and severe noise, with the largest gap at severe noise. At extreme noise, both methods are essentially broken, so the advantage disappears.
 
@@ -115,8 +115,8 @@ Severe noise is worse and the pattern is different. The LLM classified 12 of 30 
 | Moderate | 0 | 420 |
 | Heavy | 0 | 420 |
 | Severe | 2 | 420 |
-| Extreme | 2 | 420 |
-| **Total** | **4** | **2,100** |
+| Extreme | 3 | 420 |
+| **Total** | **5** | **2,100** |
 
 There were zero hallucinations below severe OCR quality. At extreme noise the LLM returns null for almost every field rather than guessing from medical priors. Those nulls are scored as misses, not as correct abstentions, because every field in the ground truth has a value.
 
@@ -227,7 +227,7 @@ cp .env.example .env
 # edit .env and add your Anthropic key
 ```
 
-Cost for the full 30 form, 5 tier pipeline is under $2 at current Claude Sonnet 4.5 pricing.
+Cost for the full 30 form, 5 tier pipeline is under $2 at current Claude Sonnet 4.5 pricing. You only pay it if you change the prompt or the model, because the committed response cache already covers every document in the published run.
 
 ---
 
@@ -238,11 +238,14 @@ python -m src.generate_forms    # PDFs and ground truth
 python -m src.degrade_images    # five noise tiers per PDF
 python -m src.run_ocr           # Tesseract plus raw and sorted CER
 python -m src.extract_rules     # regex predictions
-python -m src.extract_llm       # LLM predictions
+python -m src.extract_llm       # LLM predictions, served from data/llm_cache
 python -m src.evaluate          # tables and figures
 python -m src.significance      # bootstrap CIs and McNemar tests
 python -m src.error_analysis    # failure categorization and deployment guide
+python -m src.make_figures      # case study figures in docs/assets
 ```
+
+`src.extract_llm` reads `data/llm_cache` before calling the API, so a fresh clone reproduces the published predictions with no key and no spend. Pass `--refresh` to call the API and overwrite the cache, or `--no-cache` to bypass it entirely. The cold run that produced the committed cache took 5 minutes.
 
 ---
 
@@ -265,6 +268,7 @@ python -m src.error_analysis    # failure categorization and deployment guide
 | File | `ocr_results.json` | Raw Tesseract output with CER per tier |
 | Subfolder | `pdfs/` | Generated forms, gitignored and regeneratable |
 | Subfolder | `images/` | Noisy renders, gitignored and regeneratable |
+| Subfolder | `llm_cache/` | One raw API response per document, committed for replay |
 | **Folder** | **`results/`** | **Tables and figures** |
 | File | `f1_comparison.csv` | Headline precision, recall, and F1 table across all 5 tiers |
 | File | `per_field_f1.csv` | Per method, per noise, per field F1 |
@@ -425,7 +429,7 @@ All randomness is seeded through `RANDOM_SEED = 42` in `config.py`.
 | Image degradation | Yes | Seeded random rotation and smudge placement |
 | OCR | Yes | Tesseract is deterministic for fixed input |
 | Regex extraction | Yes | Pure pattern matching |
-| LLM extraction | No | API side sampling adds about 1 F1 point of variance |
+| LLM extraction | Yes | Temperature is pinned to 0 and every raw response is cached in `data/llm_cache` |
 | Evaluation | Yes | Pure aggregation |
 | Significance testing | Yes | Seeded bootstrap generator |
 | Error analysis | Yes | Deterministic categorization |
@@ -438,11 +442,11 @@ This is a synthetic data study on printed forms. Results should be read as an up
 
 The two under triage errors at heavy noise, where RED was predicted as YELLOW by the LLM on `triage_color`, are a real safety concern and the clearest argument for mandatory human review of triage classifications. Severe noise adds a RED to GREEN error and four RED forms left unclassified. The rules method is not the safer alternative: its 29 missing values on the same field at heavy noise propagate silently as default routing. Both failure modes argue against autonomous triage decisions from either method.
 
-At extreme noise, where sorted CER is 0.94, both methods fail. The 4 LLM hallucinations observed in the full study are concentrated here. The near zero hallucination rate below extreme noise is a property of this specific prompt and noise range, not a guaranteed property of LLM extractors in general.
+At extreme noise, where sorted CER is 0.94, both methods fail. The 5 LLM hallucinations observed in the full study are concentrated here. The near zero hallucination rate below extreme noise is a property of this specific prompt and noise range, not a guaranteed property of LLM extractors in general.
 
 Two measurement caveats apply to the noise ladder itself. Clean and moderate score 0.317 and 0.316 sorted CER, which is close enough to treat as one condition, so the study reports five tiers but delivers four distinct ones. And a clean 200 DPI render of machine printed text should OCR near 0.02, not 0.32. The inflation comes from `reconstruct_source_text` in `run_ocr.py`, which compares OCR output against a hand typed reconstruction of the form labels, so every transcription mismatch is charged to Tesseract. The ordering across tiers is meaningful; the absolute values are not.
 
-The LLM stage is also not reproducible as written. `extract_llm.py` does not set `temperature` and does not cache responses, so the exact numbers here cannot be re derived without another paid run.
+The LLM stage is reproducible in the sense that matters for this repository: temperature is pinned to 0 and every raw response is committed under `data/llm_cache`, so anyone can regenerate every table and figure here with no API key and no spend. What that does not guarantee is that a fresh call to the API would return the same text a year from now. Model versions change on the provider side, and the cache preserves the answers this study was built on rather than promising the model will answer that way again.
 
 ---
 
@@ -455,7 +459,6 @@ The LLM stage is also not reproducible as written. `extract_llm.py` does not set
 | Handwriting OCR | Swap Tesseract for a handwriting capable OCR model such as TrOCR or Google Document AI | Address the largest gap between synthetic and real conditions |
 | Vitals cross validation | Flag triage color predictions that contradict extracted vitals | Catch under triage errors without human review of every form |
 | Reference text from source | Derive the CER reference from the same draw calls that render the form | Make the OCR quality metric trustworthy in absolute terms |
-| Deterministic LLM stage | Set temperature to 0 and cache every response to disk | Make the full pipeline replayable with no API key |
 | Per tier deployment guide | Parameterize the tier in `error_analysis.py` | Stop pooling three tiers into a table labeled heavy noise |
 
 ---

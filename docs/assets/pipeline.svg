@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="250" viewBox="0 0 880 250" role="img"
+  aria-label="Pipeline: 30 synthetic forms are degraded into five noise tiers, producing 150 images. Tesseract OCR turns each into text. That text feeds two extractors in parallel, a regex baseline and a zero-shot LLM. Both are scored against ground truth, then analyzed for significance, failure category and triage safety.">
+<defs>
+  <marker id="ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M0 0 L8 4 L0 8 z" fill="#c8cedb"/>
+  </marker>
+  <style>
+text{font-family:Archivo,"Helvetica Neue",Arial,sans-serif}
+    .bx{fill:#ffffff;stroke:#c8cedb;stroke-width:1}
+    .bxa{fill:#e4edf9;stroke:#1c5cab;stroke-width:1}
+    .t{font-size:12.5px;font-weight:600;fill:#10141b}
+    .s{font-size:10.5px;fill:#7d8595;font-family:"JetBrains Mono",monospace}
+    .ln{stroke:#c8cedb;stroke-width:1.2;fill:none;marker-end:url(#ar)}
+    .ph{font-size:9.5px;font-weight:600;letter-spacing:.11em;fill:#7d8595}
+  </style>
+</defs>
+
+<text class="ph" x="8" y="14">GENERATE</text>
+<text class="ph" x="252" y="14">READ</text>
+<text class="ph" x="410" y="14">EXTRACT</text>
+<text class="ph" x="648" y="14">EVALUATE</text>
+<line x1="0" y1="22" x2="880" y2="22" stroke="#dee2ea" stroke-width="1"/>
+
+<rect class="bx" x="8"  y="98" width="112" height="48" rx="3"/>
+<text class="t" x="64" y="118" text-anchor="middle">30 forms</text>
+<text class="s" x="64" y="134" text-anchor="middle">reportlab</text>
+
+<rect class="bx" x="140" y="98" width="96" height="48" rx="3"/>
+<text class="t" x="188" y="118" text-anchor="middle">5 tiers</text>
+<text class="s" x="188" y="134" text-anchor="middle">150 images</text>
+
+<rect class="bx" x="256" y="98" width="104" height="48" rx="3"/>
+<text class="t" x="308" y="118" text-anchor="middle">Tesseract</text>
+<text class="s" x="308" y="134" text-anchor="middle">+ CER / WER</text>
+
+<rect class="bx"  x="392" y="58"  width="140" height="48" rx="3"/>
+<text class="t" x="462" y="78"  text-anchor="middle">Regex baseline</text>
+<text class="s" x="462" y="94"  text-anchor="middle">14 patterns</text>
+
+<rect class="bxa" x="392" y="138" width="140" height="48" rx="3"/>
+<text class="t" x="462" y="158" text-anchor="middle">LLM, zero-shot</text>
+<text class="s" x="462" y="174" text-anchor="middle">Claude Sonnet 4.5</text>
+
+<rect class="bx" x="562" y="98" width="112" height="48" rx="3"/>
+<text class="t" x="618" y="118" text-anchor="middle">Score</text>
+<text class="s" x="618" y="134" text-anchor="middle">P / R / F1</text>
+
+<rect class="bx" x="700" y="44"  width="172" height="40" rx="3"/>
+<text class="t" x="786" y="69"  text-anchor="middle">Bootstrap + McNemar</text>
+<rect class="bx" x="700" y="102" width="172" height="40" rx="3"/>
+<text class="t" x="786" y="127" text-anchor="middle">Failure categories</text>
+<rect class="bx" x="700" y="160" width="172" height="40" rx="3"/>
+<text class="t" x="786" y="185" text-anchor="middle">Triage safety matrix</text>
+
+<path class="ln" d="M120 122 H136"/>
+<path class="ln" d="M236 122 H252"/>
+<path class="ln" d="M360 122 H376 V82 H388"/>
+<path class="ln" d="M360 122 H376 V162 H388"/>
+<path class="ln" d="M532 82  H548 V122 H558"/>
+<path class="ln" d="M532 162 H548 V122 H558"/>
+<path class="ln" d="M674 122 H688 V64  H696"/>
+<path class="ln" d="M674 122 H688 V122 H696"/>
+<path class="ln" d="M674 122 H688 V180 H696"/>
+</svg>

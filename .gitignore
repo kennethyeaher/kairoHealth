@@ -6,3 +6,8 @@ data/pdfs/
 data/images/
 .DS_Store
 .ipynb_checkpoints/
+
+# local working notes — never committed
+/notes/
+/docs/*.md
+!/docs/README.md

@@ -19,6 +19,11 @@
 
 </div>
 
+
+![Grouped bar chart comparing rules and language model extraction F1 across five OCR noise tiers.](results/f1_by_noise.png)
+
+Existing study output from the synthetic triage form experiment; see the findings and statistical tests below.
+
 ## Project Overview
 
 Kairo Health started from a question I have been carrying since cofounding Frontground, a startup focused on personalized mobile electronic medical records for low resource clinics. Mobile capture and cloud storage solve part of the problem, but they leave a harder upstream issue untouched: once you have a photo of a paper medical record, how do you actually use it? A blurry JPEG of a triage form is not the same as structured patient data. This project is a controlled study of that conversion step.
@@ -463,15 +468,11 @@ The LLM stage is reproducible in the sense that matters for this repository: tem
 
 ---
 
-<div>
-
 ## Author
 
 **Kenneth Yeaher**  
-Master of Information Management, Class of 2027  
+Master of Information Management  
 University of Maryland, College Park  
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Kenneth_Yeaher-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kennethyeaher/)
+[![LinkedIn: Kenneth Yeaher](https://img.shields.io/badge/LinkedIn-Kenneth_Yeaher-0A66C2?style=flat)](https://www.linkedin.com/in/kennethyeaher/)
 
 `Healthcare NLP` · `Information Extraction` · `OCR` · `LLM Evaluation`
-
-</div>

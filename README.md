@@ -1,42 +1,3 @@
-<p align="center">
-  <img src="docs/readme/banner.svg" alt="Kairo Health. What survives when a document gets noisy?" width="100%">
-</p>
-
-<p align="center">
-  <img alt="Python" src="https://img.shields.io/badge/Python-134E59?style=flat-square">
-</p>
-
-<p align="center"><a href="results/">Published result tables</a> &nbsp; · &nbsp; <a href="src/">Pipeline modules</a></p>
-
-## Overview
-
-A controlled study of extracting structured fields from degraded medical forms. The pipeline creates synthetic pediatric triage records, applies five noise tiers, runs OCR, and compares a rules baseline with model-based extraction.
-
-<img src="docs/assets/recall_by_noise.png" alt="Existing research figure comparing extraction recall across OCR noise tiers." width="100%">
-
-*Existing project output; not regenerated for this README update.*
-
-## At a glance
-
-| Area | What to look for |
-| --- | --- |
-| **Experiment** | Synthetic forms and controlled image degradation isolate changes in input quality. |
-| **Comparison** | Rules and LLM extraction are evaluated on the same documents and field schema. |
-| **Analysis** | Field-level metrics, paired uncertainty estimates, and error categories expose where each method fails. |
-
-## Start here
-
-Start with the saved tables in `results/` and the figures in `docs/assets/`. The detailed guide below covers system dependencies, Python setup, cached predictions, and the full pipeline.
-
-## Scope
-
-All records are synthetic. The findings describe this experiment and do not establish clinical readiness or safe autonomous triage. Model and API names below describe the system being evaluated.
-
----
-
-<details>
-<summary><strong>Research findings, methods, setup, and source documentation</strong></summary>
-
 <div align="center">
 
 # Kairo Health
@@ -514,5 +475,3 @@ University of Maryland, College Park
 `Healthcare NLP` · `Information Extraction` · `OCR` · `LLM Evaluation`
 
 </div>
-
-</details>

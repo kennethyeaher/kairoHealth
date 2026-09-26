@@ -4,11 +4,12 @@
 
 ### OCR Noise Effects on Medical Record Information Extraction
 
-![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=flat&logo=python&logoColor=white)
-![Tesseract](https://img.shields.io/badge/Tesseract-5.x-4285F4?style=flat&logo=google&logoColor=white)
-![Anthropic](https://img.shields.io/badge/Anthropic-Claude_Sonnet-D4A373?style=flat)
-![Pandas](https://img.shields.io/badge/Pandas-2.2-150458?style=flat&logo=pandas&logoColor=white)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-1.6-F7931E?style=flat&logo=scikit-learn&logoColor=white)
+![Python](docs/readme/badges/python-3776AB.svg)
+![Tesseract](docs/readme/badges/tesseract.svg)
+![pandas](docs/readme/badges/pandas-150458.svg)
+![NumPy](docs/readme/badges/numpy-013243.svg)
+![SciPy](docs/readme/badges/scipy-8CAAE6.svg)
+![Anthropic API](docs/readme/badges/anthropic-5A4637.svg)
 ![Status](https://img.shields.io/badge/Status-Complete-brightgreen?style=flat)
 
 **University of Maryland, College of Information | INST664: Transforming Unstructured Content with AI | Final Project**

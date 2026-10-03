@@ -1,35 +1,48 @@
-<div align="center">
+<p align="center">
+  <img src="docs/assets/banner.svg" alt="Kairo Health. Photos of paper triage forms, turned into data, and a measure of where that breaks. Five form slips step from clean to extreme OCR noise." width="100%">
+</p>
 
-# Kairo Health
+<p align="center">
+  <strong>OCR noise effects on medical record information extraction.</strong><br>
+  A controlled study of the step between a photo of a paper medical record and usable patient data.<br>
+  University of Maryland, College of Information · INST664: Transforming Unstructured Content with AI · Final Project
+</p>
 
-### OCR Noise Effects on Medical Record Information Extraction
+<p align="center">
+  <img alt="Python" src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white">
+  <img alt="Tesseract" src="docs/readme/badges/tesseract.svg">
+  <img alt="pandas" src="https://img.shields.io/badge/pandas-150458?style=flat-square&logo=pandas&logoColor=white">
+  <img alt="NumPy" src="https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white">
+  <img alt="SciPy" src="https://img.shields.io/badge/SciPy-8CAAE6?style=flat-square&logo=scipy&logoColor=white">
+  <img alt="Anthropic API" src="https://img.shields.io/badge/Anthropic_API-5A4637?style=flat-square&logo=anthropic&logoColor=white">
+  <br>
+  <img alt="Status complete" src="https://img.shields.io/badge/status-complete-1c5cab?style=flat-square">
+  <img alt="Reproducible with no API key" src="https://img.shields.io/badge/reproduce-no%20api%20key-1c5cab?style=flat-square">
+</p>
 
-![Python](docs/readme/badges/python-3776AB.svg)
-![Tesseract](docs/readme/badges/tesseract.svg)
-![pandas](docs/readme/badges/pandas-150458.svg)
-![NumPy](docs/readme/badges/numpy-013243.svg)
-![SciPy](docs/readme/badges/scipy-8CAAE6.svg)
-![Anthropic API](docs/readme/badges/anthropic-5A4637.svg)
-![Status](https://img.shields.io/badge/Status-Complete-brightgreen?style=flat)
-
-**University of Maryland, College of Information | INST664: Transforming Unstructured Content with AI | Final Project**
-
-[Headline Findings](#headline-findings) · [Statistical Testing](#statistical-testing) · [Deployment Guide](#deployment-guide) · [Pipeline Stages](#pipeline-stages) · [Data and Sources](#data-and-sources)
+<p align="center">
+  <a href="#headline-findings"><strong>Findings</strong></a> &nbsp; · &nbsp;
+  <a href="#triage-safety">Triage safety</a> &nbsp; · &nbsp;
+  <a href="#reproducibility">Reproducibility</a> &nbsp; · &nbsp;
+  <a href="#run-it">Run it</a> &nbsp; · &nbsp;
+  <a href="#limitations">Limitations</a>
+</p>
 
 ---
 
-</div>
-
-
-![Grouped bar chart comparing rules and language model extraction F1 across five OCR noise tiers.](results/f1_by_noise.png)
-
-Existing study output from the synthetic triage form experiment; see the findings and statistical tests below.
-
-## Project Overview
+## Why this exists
 
 Kairo Health started from a question I have been carrying since cofounding Frontground, a startup focused on personalized mobile electronic medical records for low resource clinics. Mobile capture and cloud storage solve part of the problem, but they leave a harder upstream issue untouched: once you have a photo of a paper medical record, how do you actually use it? A blurry JPEG of a triage form is not the same as structured patient data. This project is a controlled study of that conversion step.
 
+The study uses the Médecins Sans Frontières Aweil Pediatric Triage form. I selected this form because clinicians I interviewed during Frontground customer discovery, specifically at the MSF clinic in Monrovia, used a near identical variant.
+
+<img src="docs/assets/at_a_glance.svg" alt="Results at a glance. Recall at heavy noise is 0.90 for the LLM against 0.77 for regex. The LLM won 55 of 56 heavy noise disagreements, McNemar p = 1.6e-15. The LLM invented 5 of 2,100 field values, none below severe noise. Triage colors were correct on 25 of 30 forms at heavy noise, with 2 RED cases under triaged." width="100%">
+
+## What I built
+
 The pipeline generates synthetic pediatric triage forms modeled on the Médecins Sans Frontières Aweil Pediatric Triage form. Each form is rendered at five OCR noise tiers: clean, moderate, heavy, severe, and extreme. Tesseract OCR is then run on every image, and two extraction methods are compared on the OCR text: a rule based regex baseline and a zero shot LLM extractor using Claude Sonnet 4.5.
+
+<img src="docs/assets/noise_ladder.png" alt="The same triage form header rendered at five OCR noise tiers. Clean and moderate are crisp. Heavy is rotated and faintly yellow. Severe is blurred and tinted. Extreme is rotated, blurred, and barely legible. Sorted CER rises from 0.32 to 0.94." width="100%">
 
 The evaluation reports precision, recall, and F1 at the field level and across noise tiers. It also adds bootstrap confidence intervals, McNemar significance tests, and per field error categorization for missing, substitution, hallucination, and layout artifact failures.
 
@@ -39,7 +52,7 @@ The headline finding is that the methods are statistically indistinguishable on 
 
 ---
 
-## Headline Findings
+## Headline findings
 
 | Noise | Sorted CER | Rules F1 | LLM F1 | Rules Recall | LLM Recall |
 |---|---:|---:|---:|---:|---:|
@@ -52,6 +65,26 @@ The headline finding is that the methods are statistically indistinguishable on 
 The recall column tells the clearest version of the story. From clean to heavy noise, LLM recall drops by only 1 point, from 0.91 to 0.90, while rules recall drops by 13 points, from 0.90 to 0.77. At severe noise, the gap widens: rules recall falls to 0.42 while LLM recall holds at 0.54. At extreme noise both methods fail. The ground truth has a value in every field, so the LLM returning null for 410 of 420 fields is 410 misses rather than 410 correct refusals, which is exactly why its recall there is 0.01. What the behavior does show is that the model goes quiet instead of inventing values from medical priors. The rules method returned a value on only 2 of 420 fields and both were wrong.
 
 > **Note on CER:** Sorted CER measures character recognition quality after token sorting both the OCR output and reference text. This removes reading order penalties caused by Tesseract's column traversal. Raw CER is also computed and stored in `data/ocr_results.json`, but sorted CER is the cleaner metric for this analysis.
+
+<img src="docs/assets/recall_by_noise.png" alt="Grouped bar chart of recall by noise tier. Regex and LLM are close at clean and moderate. At heavy noise the LLM holds 0.90 while regex falls to 0.77, and at severe noise 0.54 against 0.42, both marked significant. Both fall to near zero at extreme noise." width="100%">
+
+<details>
+<summary><strong>F1 by noise tier</strong></summary>
+<br>
+
+![Grouped bar chart comparing rules and language model extraction F1 across five OCR noise tiers.](results/f1_by_noise.png)
+
+</details>
+
+---
+
+## Triage safety
+
+The LLM classified 25 of 30 forms correctly at heavy noise. Of its 5 errors on `triage_color`, 3 were over triage, meaning GREEN was predicted as YELLOW, which is the safer direction. The other 2 were under triage, meaning RED was predicted as YELLOW. The rules method returned nothing on this field for 29 of 30 forms, which silently propagates as null triage data downstream.
+
+Severe noise is worse and the pattern is different. The LLM classified 12 of 30 correctly, left 13 forms unclassified including 4 marked RED by the clinician, and produced one RED to GREEN error. Both failure modes argue against autonomous triage classification at any noise level.
+
+<img src="docs/assets/triage_safety_matrix.png" alt="Two confusion matrices of clinician triage color against LLM prediction. At heavy noise 25 of 30 are correct, 3 GREEN forms are over triaged to YELLOW and 2 RED forms are under triaged to YELLOW. At severe noise 12 are correct, 13 are left unclassified including 4 RED, and one RED form is predicted GREEN." width="100%">
 
 ---
 
@@ -75,6 +108,25 @@ See `results/bootstrap_ci.csv`, `results/bootstrap_diff.csv`, and `results/mcnem
 
 ---
 
+## Reproducibility
+
+All randomness is seeded through `RANDOM_SEED = 42` in `config.py`.
+
+| Stage | Reruns Identical | Notes |
+|---|---|---|
+| Form generation | Yes | Fully deterministic |
+| Image degradation | Yes | Seeded random rotation and smudge placement |
+| OCR | Yes | Tesseract is deterministic for fixed input |
+| Regex extraction | Yes | Pure pattern matching |
+| LLM extraction | Yes | Temperature is pinned to 0 and every raw response is cached in `data/llm_cache` |
+| Evaluation | Yes | Pure aggregation |
+| Significance testing | Yes | Seeded bootstrap generator |
+| Error analysis | Yes | Deterministic categorization |
+
+`src.extract_llm` reads `data/llm_cache` before calling the API, so a fresh clone reproduces the published predictions with no key and no spend. Pass `--refresh` to call the API and overwrite the cache, or `--no-cache` to bypass it entirely. The cold run that produced the committed cache took 5 minutes.
+
+---
+
 ## Deployment Guide
 
 Error analysis at heavy, severe, and extreme noise categorizes each failure as missing, substitution, hallucination, or layout artifact. The table below reports the heavy tier on its own, because that is the tier where the two methods separate while both are still usable. Note that `results/deployment_guide.csv` currently pools all three degraded tiers, so its totals are larger than the heavy only counts shown here.
@@ -86,7 +138,9 @@ Error analysis at heavy, severe, and extreme noise categorizes each failure as m
 | Hallucination | Method returned a wrong value that does not appear in the OCR text |
 | Layout artifact | Method returned nothing and the field label was absent from OCR text |
 
-### Field Level Recommendation at Heavy Noise
+<details>
+<summary><strong>Field level recommendation at heavy noise</strong></summary>
+<br>
 
 | Field | Rules Errors | LLM Errors | Recommended |
 |---|---:|---:|---|
@@ -105,13 +159,11 @@ Error analysis at heavy, severe, and extreme noise categorizes each failure as m
 | sex | 30 | 13 | llm |
 | triage_color | 29 | 5 | llm |
 
+</details>
+
 The LLM matches or beats the rules baseline on every field at heavy noise. The practical recommendation is to use regex on the six fields where the two methods tie, because those are deterministic, auditable, and work with no network connection, and to route the other eight through the LLM.
 
 Routing this way scores F1 0.906 at heavy noise, identical to sending every field to the model. It is worth being precise about what that does and does not save. The API call is per document rather than per field, so one call already returns all fourteen values and moving six of them to regex saves output tokens and little else. The gain is that six fields become deterministic and keep working offline, not that the pipeline gets meaningfully cheaper. The split is also tuned at heavy noise and should not be applied to clean input, where the pure regex baseline scores higher than either alternative at F1 0.927.
-
-**Safety caveat:** The LLM classified 25 of 30 forms correctly at heavy noise. Of its 5 errors on `triage_color`, 3 were over triage, meaning GREEN was predicted as YELLOW, which is the safer direction. The other 2 were under triage, meaning RED was predicted as YELLOW. The rules method returned nothing on this field for 29 of 30 forms, which silently propagates as null triage data downstream.
-
-Severe noise is worse and the pattern is different. The LLM classified 12 of 30 correctly, left 13 forms unclassified including 4 marked RED by the clinician, and produced one RED to GREEN error. Both failure modes argue against autonomous triage classification at any noise level. See `results/triage_safety_matrix.png` in `docs/assets`.
 
 ### Hallucination Profile Across All Tiers
 
@@ -130,14 +182,28 @@ See `results/error_categories.csv` and `results/deployment_guide.csv`.
 
 ---
 
-## Data and Sources
+## Limitations
+
+This is a synthetic data study on printed forms. Results should be read as an upper bound on extraction quality achievable with clean printed templates. Field performance on real handwritten triage records would almost certainly be lower for both methods.
+
+The two under triage errors at heavy noise, where RED was predicted as YELLOW by the LLM on `triage_color`, are a real safety concern and the clearest argument for mandatory human review of triage classifications. Severe noise adds a RED to GREEN error and four RED forms left unclassified. The rules method is not the safer alternative: its 29 missing values on the same field at heavy noise propagate silently as default routing. Both failure modes argue against autonomous triage decisions from either method.
+
+At extreme noise, where sorted CER is 0.94, both methods fail. The 5 LLM hallucinations observed in the full study are concentrated here. The near zero hallucination rate below extreme noise is a property of this specific prompt and noise range, not a guaranteed property of LLM extractors in general.
+
+Two measurement caveats apply to the noise ladder itself. Clean and moderate score 0.317 and 0.316 sorted CER, which is close enough to treat as one condition, so the study reports five tiers but delivers four distinct ones. And a clean 200 DPI render of machine printed text should OCR near 0.02, not 0.32. The inflation comes from `reconstruct_source_text` in `run_ocr.py`, which compares OCR output against a hand typed reconstruction of the form labels, so every transcription mismatch is charged to Tesseract. The ordering across tiers is meaningful; the absolute values are not.
+
+The LLM stage is reproducible in the sense that matters for this repository: temperature is pinned to 0 and every raw response is committed under `data/llm_cache`, so anyone can regenerate every table and figure here with no API key and no spend. What that does not guarantee is that a fresh call to the API would return the same text a year from now. Model versions change on the provider side, and the cache preserves the answers this study was built on rather than promising the model will answer that way again.
+
+---
+
+## Data and sources
 
 <details>
 <summary><strong>Source Form</strong></summary>
 
 <br>
 
-The synthetic dataset is modeled on the MSF Aweil Pediatric Triage form, a clinical document used by Médecins Sans Frontières clinicians for pediatric triage in low resource settings. I selected this form because clinicians I interviewed during Frontground customer discovery, specifically at the MSF clinic in Monrovia, used a near identical variant.
+The synthetic dataset is modeled on the MSF Aweil Pediatric Triage form, a clinical document used by Médecins Sans Frontières clinicians for pediatric triage in low resource settings.
 
 | Property | Description |
 |---|---|
@@ -203,9 +269,13 @@ Each PDF is rendered at five noise tiers through parameterized image degradation
 
 ---
 
-## Setup Instructions
+## Run it
 
-### System Dependencies
+<details>
+<summary><strong>Setup</strong></summary>
+<br>
+
+#### System Dependencies
 
 ```bash
 # macOS
@@ -215,7 +285,7 @@ brew install tesseract poppler
 sudo apt-get install tesseract-ocr poppler-utils
 ```
 
-### Python Environment
+#### Python Environment
 
 ```bash
 git clone https://github.com/kennethyeaher/kairoHealth.git
@@ -226,7 +296,7 @@ pip install -r requirements.txt
 python -m spacy download en_core_web_sm
 ```
 
-### API Key
+#### API Key
 
 ```bash
 cp .env.example .env
@@ -235,9 +305,11 @@ cp .env.example .env
 
 Cost for the full 30 form, 5 tier pipeline is under $2 at current Claude Sonnet 4.5 pricing. You only pay it if you change the prompt or the model, because the committed response cache already covers every document in the published run.
 
----
+</details>
 
-## Running the Project
+<details>
+<summary><strong>Pipeline commands</strong></summary>
+<br>
 
 ```bash
 python -m src.generate_forms    # PDFs and ground truth
@@ -251,11 +323,11 @@ python -m src.error_analysis    # failure categorization and deployment guide
 python -m src.make_figures      # case study figures in docs/assets
 ```
 
-`src.extract_llm` reads `data/llm_cache` before calling the API, so a fresh clone reproduces the published predictions with no key and no spend. Pass `--refresh` to call the API and overwrite the cache, or `--no-cache` to bypass it entirely. The cold run that produced the committed cache took 5 minutes.
+</details>
 
----
-
-## Code Package Structure
+<details>
+<summary><strong>Code package structure</strong></summary>
+<br>
 
 | Type | Path | Description |
 |---|---|---|
@@ -300,9 +372,9 @@ python -m src.make_figures      # case study figures in docs/assets
 | File | `requirements.txt` | Pinned dependencies |
 | File | `.env.example` | Template for API key configuration |
 
----
+</details>
 
-## Pipeline Stages
+### Pipeline stages
 
 ```mermaid
 flowchart TD
@@ -422,37 +494,6 @@ Paired bootstrap with 1,000 resamples and seed 42 computes 95% confidence interv
 Categorizes every wrong prediction at heavy, severe, and extreme noise into missing, substitution, hallucination, or layout artifact. The deployment guide aggregates total errors per method per field and recommends the lower error method. Hallucination detection checks whether the predicted value appears anywhere in the OCR text for that document.
 
 </details>
-
----
-
-## Reproducibility
-
-All randomness is seeded through `RANDOM_SEED = 42` in `config.py`.
-
-| Stage | Reruns Identical | Notes |
-|---|---|---|
-| Form generation | Yes | Fully deterministic |
-| Image degradation | Yes | Seeded random rotation and smudge placement |
-| OCR | Yes | Tesseract is deterministic for fixed input |
-| Regex extraction | Yes | Pure pattern matching |
-| LLM extraction | Yes | Temperature is pinned to 0 and every raw response is cached in `data/llm_cache` |
-| Evaluation | Yes | Pure aggregation |
-| Significance testing | Yes | Seeded bootstrap generator |
-| Error analysis | Yes | Deterministic categorization |
-
----
-
-## Limitations
-
-This is a synthetic data study on printed forms. Results should be read as an upper bound on extraction quality achievable with clean printed templates. Field performance on real handwritten triage records would almost certainly be lower for both methods.
-
-The two under triage errors at heavy noise, where RED was predicted as YELLOW by the LLM on `triage_color`, are a real safety concern and the clearest argument for mandatory human review of triage classifications. Severe noise adds a RED to GREEN error and four RED forms left unclassified. The rules method is not the safer alternative: its 29 missing values on the same field at heavy noise propagate silently as default routing. Both failure modes argue against autonomous triage decisions from either method.
-
-At extreme noise, where sorted CER is 0.94, both methods fail. The 5 LLM hallucinations observed in the full study are concentrated here. The near zero hallucination rate below extreme noise is a property of this specific prompt and noise range, not a guaranteed property of LLM extractors in general.
-
-Two measurement caveats apply to the noise ladder itself. Clean and moderate score 0.317 and 0.316 sorted CER, which is close enough to treat as one condition, so the study reports five tiers but delivers four distinct ones. And a clean 200 DPI render of machine printed text should OCR near 0.02, not 0.32. The inflation comes from `reconstruct_source_text` in `run_ocr.py`, which compares OCR output against a hand typed reconstruction of the form labels, so every transcription mismatch is charged to Tesseract. The ordering across tiers is meaningful; the absolute values are not.
-
-The LLM stage is reproducible in the sense that matters for this repository: temperature is pinned to 0 and every raw response is committed under `data/llm_cache`, so anyone can regenerate every table and figure here with no API key and no spend. What that does not guarantee is that a fresh call to the API would return the same text a year from now. Model versions change on the provider side, and the cache preserves the answers this study was built on rather than promising the model will answer that way again.
 
 ---
 

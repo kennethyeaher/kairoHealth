@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1188" height="174" viewBox="0 0 1188 174" role="img" aria-labelledby="title description">
+  <title id="title">Kairo Health results at a glance</title>
+  <desc id="description">0.90 vs 0.77: Recall at heavy noise. LLM against regex; 55 of 56: Disagreements the LLM won. Heavy noise, McNemar p = 1.6e-15; 5 of 2,100: Values the LLM invented. None below severe noise; 25 of 30: Triage colors correct. Heavy noise, 2 RED under triaged</desc>
+  <rect x="0.5" y="0.5" width="1187" height="173" rx="16" fill="#10141b" stroke="#2c3546"/>
+  <rect x="12" y="12" width="282" height="150" rx="10" fill="#1a2130"/>
+  <rect x="12" y="12" width="4" height="150" rx="2" fill="#3b82f6"/>
+  <text x="36" y="70" fill="#ffffff" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="36" font-weight="700">0.90 vs 0.77</text>
+  <text x="36" y="108" fill="#e4edf9" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="17" font-weight="600">Recall at heavy noise</text>
+  <text x="36" y="138" fill="#9aa3b5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15">LLM against regex</text>
+  <rect x="306" y="12" width="282" height="150" rx="10" fill="#1a2130"/>
+  <rect x="306" y="12" width="4" height="150" rx="2" fill="#3b82f6"/>
+  <text x="330" y="70" fill="#ffffff" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="36" font-weight="700">55 of 56</text>
+  <text x="330" y="108" fill="#e4edf9" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="17" font-weight="600">Disagreements the LLM won</text>
+  <text x="330" y="138" fill="#9aa3b5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15">Heavy noise, McNemar p = 1.6e-15</text>
+  <rect x="600" y="12" width="282" height="150" rx="10" fill="#1a2130"/>
+  <rect x="600" y="12" width="4" height="150" rx="2" fill="#3b82f6"/>
+  <text x="624" y="70" fill="#ffffff" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="36" font-weight="700">5 of 2,100</text>
+  <text x="624" y="108" fill="#e4edf9" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="17" font-weight="600">Values the LLM invented</text>
+  <text x="624" y="138" fill="#9aa3b5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15">None below severe noise</text>
+  <rect x="894" y="12" width="282" height="150" rx="10" fill="#1a2130"/>
+  <rect x="894" y="12" width="4" height="150" rx="2" fill="#1c5cab"/>
+  <text x="918" y="70" fill="#ffffff" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="36" font-weight="700">25 of 30</text>
+  <text x="918" y="108" fill="#e4edf9" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="17" font-weight="600">Triage colors correct</text>
+  <text x="918" y="138" fill="#9aa3b5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15">Heavy noise, 2 RED under triaged</text>
+</svg>
